@@ -57,7 +57,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Event', "fa-regular fa-calendar-days", Event::class);
         yield MenuItem::linkToCrud('Filter', "fa-solid fa-filter", Filter::class);
         yield MenuItem::linkToCrud('Media', "fa-solid fa-photo-film", Media::class);
-        yield MenuItem::linkToCrud('Timeline', 'fas fa-list', Timeline::class);
+        yield MenuItem::linkToCrud('Timeline', "fa-solid fa-timeline", Timeline::class);
 
     }
 }
