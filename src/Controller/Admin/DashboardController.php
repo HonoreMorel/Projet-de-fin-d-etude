@@ -62,29 +62,27 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Acceuil', 'fa-solid fa-moon', 'app_home');
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Activity', 'fas fa-list', Activity::class);
-        yield MenuItem::linkToCrud('Classification',"fa-solid fa-magnifying-glass", Classification::class);
+        yield MenuItem::linkToRoute('Accueil du site',"fa-solid fa-house", 'app_home');
+        
+        
+        yield MenuItem::section('Utilisateur');
+        yield MenuItem::linkToCrud('User', "fa-solid fa-user-gear", User::class);
+
+        yield MenuItem::section('Dinosaure');
         yield MenuItem::linkToCrud('Dinosaur', "fa-solid fa-hippo", Dinosaur::class);
-<<<<<<< HEAD
-        yield MenuItem::linkToCrud('Event', 'fas fa-list', Event::class);
-        yield MenuItem::linkToCrud('Filter', 'fas fa-list', Filter::class);
-        yield MenuItem::linkToCrud('Media', 'fas fa-list', Media::class);
-        yield MenuItem::linkToCrud('Timeline', 'fas fa-list', Timeline::class);
-        yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
-        yield MenuItem::linkToCrud('Subject', 'fas fa-list', Subject::class);
-        yield MenuItem::linkToCrud('Question', 'fas fa-list', Question::class);
-        yield MenuItem::linkToCrud('Answer', 'fas fa-list', Answer::class);
-        yield MenuItem::linkToCrud('Score', 'fas fa-list', Score::class);
-        yield MenuItem::linkToCrud('Game', 'fas fa-list', Game::class);
-
-=======
-        yield MenuItem::linkToCrud('Event', "fa-regular fa-calendar-days", Event::class);
-        yield MenuItem::linkToCrud('Filter', "fa-solid fa-filter", Filter::class);
         yield MenuItem::linkToCrud('Media', "fa-solid fa-photo-film", Media::class);
+        yield MenuItem::linkToCrud('Classification',"fa-solid fa-magnifying-glass", Classification::class);
         yield MenuItem::linkToCrud('Timeline', "fa-solid fa-timeline", Timeline::class);
->>>>>>> Honoré
-
+        
+        yield MenuItem::section('Jeux');
+        yield MenuItem::linkToCrud('Game', "fa-solid fa-gamepad", Game::class);
+        yield MenuItem::linkToCrud('Subject', "fa-solid fa-heading", Subject::class);
+        yield MenuItem::linkToCrud('Question', "fa-solid fa-circle-question", Question::class);
+        yield MenuItem::linkToCrud('Answer', "fa-solid fa-reply", Answer::class);
+        
+        yield MenuItem::section('Event');
+        yield MenuItem::linkToCrud('Event', "fa-regular fa-calendar-days", Event::class);
+        yield MenuItem::linkToCrud('Activity', 'fas fa-list', Activity::class);
+        yield MenuItem::linkToCrud('Filter', "fa-solid fa-filter", Filter::class);
     }
 }

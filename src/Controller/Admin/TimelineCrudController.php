@@ -39,4 +39,11 @@ class TimelineCrudController extends AbstractCrudController
                 return $action->setIcon('fa-solid fa-timeline')->setLabel('Créer une TimeLine');
             });
     }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('new', 'Créer une TimeLine')
+            ->setPageTitle('index', 'Créer une TimeLine');
+    }
 }
