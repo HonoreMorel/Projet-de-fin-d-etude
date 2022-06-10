@@ -8,7 +8,11 @@
 /public/bundles/
 /var/
 /vendor/
+<<<<<<< HEAD
 /migrations/
+=======
+/migration/
+>>>>>>> Honoré
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

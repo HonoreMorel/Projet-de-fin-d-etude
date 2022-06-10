@@ -67,6 +67,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Activity', 'fas fa-list', Activity::class);
         yield MenuItem::linkToCrud('Classification',"fa-solid fa-magnifying-glass", Classification::class);
         yield MenuItem::linkToCrud('Dinosaur', "fa-solid fa-hippo", Dinosaur::class);
+<<<<<<< HEAD
         yield MenuItem::linkToCrud('Event', 'fas fa-list', Event::class);
         yield MenuItem::linkToCrud('Filter', 'fas fa-list', Filter::class);
         yield MenuItem::linkToCrud('Media', 'fas fa-list', Media::class);
@@ -78,6 +79,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Score', 'fas fa-list', Score::class);
         yield MenuItem::linkToCrud('Game', 'fas fa-list', Game::class);
 
+=======
+        yield MenuItem::linkToCrud('Event', "fa-regular fa-calendar-days", Event::class);
+        yield MenuItem::linkToCrud('Filter', "fa-solid fa-filter", Filter::class);
+        yield MenuItem::linkToCrud('Media', "fa-solid fa-photo-film", Media::class);
+        yield MenuItem::linkToCrud('Timeline', "fa-solid fa-timeline", Timeline::class);
+>>>>>>> Honoré
 
     }
 }
