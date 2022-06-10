@@ -2,15 +2,16 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Activity;
-use App\Entity\Classification;
-use App\Entity\Dinosaur;
 use App\Entity\Event;
-use App\Entity\Filter;
 use App\Entity\Media;
+use App\Entity\Filter;
+use App\Entity\Activity;
+use App\Entity\Dinosaur;
 use App\Entity\Timeline;
+use App\Entity\Classification;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Controller\Admin\DinosaurCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -26,7 +27,7 @@ class DashboardController extends AbstractDashboardController
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator->setController(OneOfYourCrudController::class)->generateUrl());
+        return $this->redirect($adminUrlGenerator->setController(DinosaurCrudController::class)->generateUrl());
 
         // Option 2. You can make your dashboard redirect to different pages depending on the user
         //
