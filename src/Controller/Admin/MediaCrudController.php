@@ -2,14 +2,14 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Image;
+use App\Entity\Media;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class ImageCrudController extends AbstractCrudController
+class MediaCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Image::class;
+        return Media::class;
     }
 
     /*
