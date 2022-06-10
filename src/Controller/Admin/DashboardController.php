@@ -3,6 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Activity;
+use App\Entity\Classification;
+use App\Entity\Dinosaur;
+use App\Entity\Event;
+use App\Entity\Filter;
+use App\Entity\Media;
+use App\Entity\Timeline;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
