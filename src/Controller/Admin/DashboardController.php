@@ -9,6 +9,19 @@ use App\Entity\Activity;
 use App\Entity\Dinosaur;
 use App\Entity\Timeline;
 use App\Entity\Classification;
+
+use App\Entity\User;
+use App\Entity\Subject;
+use App\Entity\Question;
+use App\Entity\Answer;
+use App\Entity\Score;
+use App\Entity\Game;
+
+
+
+
+
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\Admin\DinosaurCrudController;
@@ -58,6 +71,13 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Filter', 'fas fa-list', Filter::class);
         yield MenuItem::linkToCrud('Media', 'fas fa-list', Media::class);
         yield MenuItem::linkToCrud('Timeline', 'fas fa-list', Timeline::class);
+        yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Subject', 'fas fa-list', Subject::class);
+        yield MenuItem::linkToCrud('Question', 'fas fa-list', Question::class);
+        yield MenuItem::linkToCrud('Answer', 'fas fa-list', Answer::class);
+        yield MenuItem::linkToCrud('Score', 'fas fa-list', Score::class);
+        yield MenuItem::linkToCrud('Game', 'fas fa-list', Game::class);
+
 
     }
 }
