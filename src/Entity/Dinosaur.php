@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\DinosaurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: DinosaurRepository::class)]
@@ -20,7 +22,7 @@ class Dinosaur
     private $scientific_name;
 
     #[ORM\Column(type: 'integer')]
-    private $lenght;
+    private $length;
 
     #[ORM\Column(type: 'integer')]
     private $height;
@@ -45,6 +47,26 @@ class Dinosaur
 
     #[ORM\Column(type: 'string', length: 255)]
     private $fossil;
+
+    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: Image::class)]
+    private $images;
+
+    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: MoreInformation::class)]
+    private $moreInformation;
+
+    #[ORM\ManyToMany(targetEntity: Media::class, inversedBy: 'dinosaurs')]
+    private $media;
+
+    #[ORM\ManyToOne(targetEntity: Classification::class, inversedBy: 'dinosaurs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $classification;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+        $this->moreInformation = new ArrayCollection();
+        $this->media = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,14 +97,14 @@ class Dinosaur
         return $this;
     }
 
-    public function getLenght(): ?int
+    public function getLength(): ?int
     {
-        return $this->lenght;
+        return $this->length;
     }
 
-    public function setLenght(int $lenght): self
+    public function setLength(int $length): self
     {
-        $this->lenght = $lenght;
+        $this->length = $length;
 
         return $this;
     }
@@ -179,6 +201,102 @@ class Dinosaur
     public function setFossil(string $fossil): self
     {
         $this->fossil = $fossil;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setDinosaur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getDinosaur() === $this) {
+                $image->setDinosaur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MoreInformation>
+     */
+    public function getMoreInformation(): Collection
+    {
+        return $this->moreInformation;
+    }
+
+    public function addMoreInformation(MoreInformation $moreInformation): self
+    {
+        if (!$this->moreInformation->contains($moreInformation)) {
+            $this->moreInformation[] = $moreInformation;
+            $moreInformation->setDinosaur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMoreInformation(MoreInformation $moreInformation): self
+    {
+        if ($this->moreInformation->removeElement($moreInformation)) {
+            // set the owning side to null (unless already changed)
+            if ($moreInformation->getDinosaur() === $this) {
+                $moreInformation->setDinosaur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Media>
+     */
+    public function getMedia(): Collection
+    {
+        return $this->media;
+    }
+
+    public function addMedium(Media $medium): self
+    {
+        if (!$this->media->contains($medium)) {
+            $this->media[] = $medium;
+        }
+
+        return $this;
+    }
+
+    public function removeMedium(Media $medium): self
+    {
+        $this->media->removeElement($medium);
+
+        return $this;
+    }
+
+    public function getClassification(): ?Classification
+    {
+        return $this->classification;
+    }
+
+    public function setClassification(?Classification $classification): self
+    {
+        $this->classification = $classification;
 
         return $this;
     }
