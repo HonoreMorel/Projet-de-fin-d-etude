@@ -2,31 +2,33 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Image;
+use App\Entity\MoreInformation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class ImageCrudController extends AbstractCrudController
+class MoreInformationCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Image::class;
+        return MoreInformation::class;
     }
 
     
     public function configureFields(string $pageName): iterable
     {
         return [
+           
+            TextField::new('title', 'Titre'),
+            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('img/'),
+            TextEditorField::new('description', 'Description'),
+            TextField::new('alt','Texte alternatif'),
             
-            ImageField::new('url', 'Sélectionner votre Image')->setUploadDir('public/img/')->setBasePath('/img/'),
-            TextField::new('alt', 'Texte Alternatif'),
-            BooleanField::new('main_image'),
         ];
     }
     
@@ -34,14 +36,14 @@ class ImageCrudController extends AbstractCrudController
     {
         return $actions
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
-                return $action->setIcon('fa-solid fa-hippo')->setLabel('Créer une Image');
+                return $action->setIcon('fa-solid fa-info')->setLabel("Ajouter plus d'information");
             });
     }
     
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer une Image')
-            ->setPageTitle('index', 'Créer une Image');
+            ->setPageTitle('new', "Ajouter plus d'information")
+            ->setPageTitle('index', "Ajouter plus d'information");
     }
 }

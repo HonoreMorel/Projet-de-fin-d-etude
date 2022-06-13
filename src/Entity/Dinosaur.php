@@ -48,13 +48,13 @@ class Dinosaur
     #[ORM\Column(type: 'string', length: 255)]
     private $fossil;
 
-    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: Image::class)]
+    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: Image::class, cascade:['persist'], orphanRemoval:true)]
     private $images;
 
     #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: MoreInformation::class)]
     private $moreInformation;
 
-    #[ORM\ManyToMany(targetEntity: Media::class, inversedBy: 'dinosaurs')]
+    #[ORM\ManyToMany(targetEntity: Media::class, mappedBy: 'dinosaurs', cascade:['persist'])]
     private $media;
 
     #[ORM\ManyToOne(targetEntity: Classification::class, inversedBy: 'dinosaurs')]
@@ -299,5 +299,10 @@ class Dinosaur
         $this->classification = $classification;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->common_name;
     }
 }

@@ -18,7 +18,7 @@ class Subject
     #[ORM\Column(type: 'string', length: 255)]
     private $subject;
 
-    #[ORM\OneToMany(mappedBy: 'subject', targetEntity: Question::class)]
+    #[ORM\OneToMany(mappedBy: 'subject', targetEntity: Question::class, cascade: ['persist','remove'],orphanRemoval:true)]
     private $questions;
 
     #[ORM\OneToMany(mappedBy: 'subject', targetEntity: Score::class)]

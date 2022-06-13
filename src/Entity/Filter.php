@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\FilterRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Activity;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\FilterRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: FilterRepository::class)]
 class Filter
@@ -68,5 +69,10 @@ class Filter
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->filter;
     }
 }

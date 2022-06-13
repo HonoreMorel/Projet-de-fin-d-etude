@@ -24,7 +24,7 @@ class Media
     #[ORM\Column(type: 'boolean')]
     private $suggestion;
 
-    #[ORM\ManyToMany(targetEntity: Dinosaur::class, mappedBy: 'media')]
+    #[ORM\ManyToMany(targetEntity: Dinosaur::class, inversedBy: 'media',cascade:['persist'])]
     private $dinosaurs;
 
     public function __construct()

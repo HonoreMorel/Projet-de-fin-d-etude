@@ -2,10 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\QuestionRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Answer;
+use App\Entity\Subject;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\QuestionRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
 class Question
@@ -18,14 +21,14 @@ class Question
     #[ORM\Column(type: 'string', length: 255)]
     private $statement;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $image;
 
     #[ORM\ManyToOne(targetEntity: Subject::class, inversedBy: 'questions')]
     #[ORM\JoinColumn(nullable: false)]
     private $subject;
 
-    #[ORM\OneToMany(mappedBy: 'question', targetEntity: Answer::class)]
+    #[ORM\OneToMany(mappedBy: 'question', targetEntity: Answer::class, cascade: ['persist','remove'],orphanRemoval:true)]
     private $answers;
 
     public function __construct()
@@ -103,4 +106,10 @@ class Question
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->statement;
+    }
+    
 }

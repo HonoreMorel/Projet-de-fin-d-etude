@@ -22,7 +22,7 @@ class Image
     #[ORM\Column(type: 'boolean')]
     private $main_image;
 
-    #[ORM\ManyToOne(targetEntity: Dinosaur::class, inversedBy: 'images')]
+    #[ORM\ManyToOne(targetEntity: Dinosaur::class, inversedBy: 'images', cascade:['persist'])]
     #[ORM\JoinColumn(nullable: false)]
     private $dinosaur;
 
@@ -77,5 +77,10 @@ class Image
         $this->dinosaur = $dinosaur;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->url;
     }
 }

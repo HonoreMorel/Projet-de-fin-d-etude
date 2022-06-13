@@ -2,26 +2,27 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Game;
+use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Media;
+use App\Entity\Score;
+use App\Entity\Answer;
 use App\Entity\Filter;
+
+use App\Entity\Subject;
 use App\Entity\Activity;
 use App\Entity\Dinosaur;
+use App\Entity\Question;
 use App\Entity\Timeline;
 use App\Entity\Classification;
 
-use App\Entity\User;
-use App\Entity\Subject;
-use App\Entity\Question;
-use App\Entity\Answer;
-use App\Entity\Score;
-use App\Entity\Game;
 
 
 
 
 
-
+use App\Entity\MoreInformation;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\Admin\DinosaurCrudController;
@@ -70,19 +71,20 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Dinosaure');
         yield MenuItem::linkToCrud('Dinosaur', "fa-solid fa-hippo", Dinosaur::class);
+        yield MenuItem::linkToCrud("Plus d'Information", "fa-solid fa-info", MoreInformation::class);
         yield MenuItem::linkToCrud('Media', "fa-solid fa-photo-film", Media::class);
         yield MenuItem::linkToCrud('Classification',"fa-solid fa-magnifying-glass", Classification::class);
-        yield MenuItem::linkToCrud('Timeline', "fa-solid fa-timeline", Timeline::class);
+        yield MenuItem::linkToCrud('Chronologie', "fa-solid fa-timeline", Timeline::class);
         
         yield MenuItem::section('Jeux');
-        yield MenuItem::linkToCrud('Game', "fa-solid fa-gamepad", Game::class);
-        yield MenuItem::linkToCrud('Subject', "fa-solid fa-heading", Subject::class);
-        yield MenuItem::linkToCrud('Question', "fa-solid fa-circle-question", Question::class);
-        yield MenuItem::linkToCrud('Answer', "fa-solid fa-reply", Answer::class);
+        yield MenuItem::linkToCrud('Jeu', "fa-solid fa-gamepad", Game::class);
+        yield MenuItem::linkToCrud('Quizz', "fa-solid fa-heading", Subject::class);
+        /* yield MenuItem::linkToCrud('Question', "fa-solid fa-circle-question", Question::class);
+        yield MenuItem::linkToCrud('Answer', "fa-solid fa-reply", Answer::class); */
         
         yield MenuItem::section('Event');
-        yield MenuItem::linkToCrud('Event', "fa-regular fa-calendar-days", Event::class);
-        yield MenuItem::linkToCrud('Activity', 'fas fa-list', Activity::class);
+        yield MenuItem::linkToCrud('Evénement', "fa-regular fa-calendar-days", Event::class);
+        yield MenuItem::linkToCrud('Activité', 'fas fa-list', Activity::class);
         yield MenuItem::linkToCrud('Filter', "fa-solid fa-filter", Filter::class);
     }
 }

@@ -18,10 +18,10 @@ class Game
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $image;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'text')]
     private $instructions;
 
     #[ORM\OneToMany(mappedBy: 'game', targetEntity: Score::class)]

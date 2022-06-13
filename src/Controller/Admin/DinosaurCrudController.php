@@ -4,10 +4,15 @@ namespace App\Controller\Admin;
 
 use App\Form\ImageType;
 use App\Entity\Dinosaur;
+use App\Controller\Admin\ImageCrudController;
 use App\Controller\Admin\ActivityCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use App\Controller\Admin\MoreInformationCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -34,7 +39,8 @@ class DinosaurCrudController extends AbstractCrudController
             IntegerField::new('weight','Poids'),
             
             TextareaField::new('description'),
-            CollectionField::new('images')->setEntryType(ImageType::class),
+            ImageField::new('img_height')->setUploadDir('public/img/')->setBasePath('/img/'),
+            CollectionField::new('images')->useEntryCrudForm(ImageCrudController::class),
             ChoiceField::new('period','Période')->setChoices([
                 'Crétacé Inférieur'=>'Crétacé Inférieur',
                 'Crétacé Supérieur'=>'Crétacé Supérieur',
@@ -67,10 +73,28 @@ class DinosaurCrudController extends AbstractCrudController
                 'Minéralisation'=>'Minéralisation',
                 "L'ombre"=>"L'ombre",
             ]),
-            AssociationField::new('classification')
+            AssociationField::new('classification'),
+            CollectionField::new('moreInformation')->useEntryCrudForm(MoreInformationCrudController::class),
+            
 
 
         ];
     }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
+                return $action->setIcon('fa-solid fa-hippo')->setLabel('Créer un Dinosaur');
+            });
+    }
+    
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('new', 'Créer un Dinosaur')
+            ->setPageTitle('index', 'Créer un Dinosaur');
+    }
+
     
 }
