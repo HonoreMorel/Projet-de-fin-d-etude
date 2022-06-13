@@ -27,7 +27,7 @@ class DinosaurCrudController extends AbstractCrudController
             
             TextField::new('common_name','Nom Commun'),
             TextField::new('scientific_name',"Nom scientifique"),
-            IntegerField::new('length','Longuer'),
+            IntegerField::new('length','Longueur'),
             IntegerField::new('height','Hauteur'),
             IntegerField::new('weight','Poids'),
             

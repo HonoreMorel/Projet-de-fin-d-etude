@@ -21,15 +21,31 @@ class UserController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-        $form->handleRequest($request);
+        $form->handleRequest($request);  
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword($passwordEncoder->hashPassword($user, $user->getPassword()));
-
+            
+            $photo = $user->getPhoto(); /* on récupere la photo */
+            
+            if ($photo === null) {
+                $photo = $user->setPhoto("avatar.png"); /* si la photo est null alors il aura cette image par défault */
+                
+            } else {
+                /* https://symfony.com/doc/current/controller/upload_file.html */
+                $photo = $form->get('photo')->getData();
+                $newPhoto = rand(1, 99999).'.'.uniqid().'.'.$photo->guessExtension(); /* on crée une variable où l'on stocke l'image avec un nombre aléatoire  */
+                $photo->move("img", $newPhoto); /* On déplace la photo dans le dossier img */
+                $photo = $user->setPhoto($newPhoto); /* on récupere l'objet */
+            }
+            
             $userRepository->add($user, true);
 
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
+
+
 
         return $this->renderForm('user/new.html.twig', [
             'user' => $user,

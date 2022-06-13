@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Controller\Admin\ScoreCrudController;
 use App\Controller\Admin\SubjectCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
@@ -27,29 +28,28 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            EmailField::new('email'),
+            EmailField::new('email', 'Email')->setDisabled(true),
             ArrayField::new('roles'),
-            TextField::new('nickname'),
-            ImageField::new('photo')->setUploadDir('public/img/')->setBasePath('/img/'),
-            CollectionField::new('scores')->useEntryCrudForm(ScoreCrudController::class)->allowAdd(false)->allowDelete(false)->setDisabled(true),
+            TextField::new('nickname', 'Nom')->setDisabled(true),
+            ImageField::new('photo', 'Image de Profil')->setUploadDir('public/img/')->setBasePath('/img/')->setDisabled(true),
+            CollectionField::new('scores', 'Scores')->useEntryCrudForm(ScoreCrudController::class)->allowAdd(false)->allowDelete(false)->setDisabled(true),
         ];
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        return $actions
-            ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
-                return $action->setIcon('fa-solid fa-user-gear')->setLabel('Créer un Utilisateur');
-            });
+        /* On elève le bouton d'ajout d'utilisateur dans le backOffice */
+        return $actions->disable(Action::NEW);
+            
     }
     
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer un Utilisateur')
-            ->setPageTitle('index', 'Créer un Utilisateur');
+            ->setPageTitle('index', 'Liste des Utilisateurs 👥')
+            ->setPageTitle('edit', 'Modifier un Utilisateur 👤');
+            
     }
-
     
 
 }
