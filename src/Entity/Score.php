@@ -17,7 +17,6 @@ class Score
     private $score;
 
     #[ORM\ManyToOne(targetEntity: Subject::class, inversedBy: 'scores')]
-    #[ORM\JoinColumn(nullable: false)]
     private $subject;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'scores')]
@@ -77,5 +76,10 @@ class Score
         $this->game = $game;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {   
+        return $this->game. ' : ' . $this->subject. ' : ' .$this->score;
     }
 }

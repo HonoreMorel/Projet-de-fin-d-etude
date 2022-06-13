@@ -16,9 +16,9 @@ use App\Controller\Admin\MoreInformationCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+
 
 class DinosaurCrudController extends AbstractCrudController
 {
@@ -34,7 +34,7 @@ class DinosaurCrudController extends AbstractCrudController
             
             TextField::new('common_name','Nom Commun'),
             TextField::new('scientific_name',"Nom scientifique"),
-            IntegerField::new('length','Longuer'),
+            IntegerField::new('length','Longueur'),
             IntegerField::new('height','Hauteur'),
             IntegerField::new('weight','Poids'),
             
