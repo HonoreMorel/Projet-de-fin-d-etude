@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use App\Controller\Admin\SubjectCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
@@ -10,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -29,7 +31,7 @@ class UserCrudController extends AbstractCrudController
             ArrayField::new('roles'),
             TextField::new('nickname'),
             ImageField::new('photo')->setUploadDir('public/img/')->setBasePath('/img/'),
-            AssociationField::new('scores'),
+            CollectionField::new('scores')->useEntryCrudForm(ScoreCrudController::class)->allowAdd(false)->allowDelete(false)->setDisabled(true),
         ];
     }
 
@@ -47,5 +49,7 @@ class UserCrudController extends AbstractCrudController
             ->setPageTitle('new', 'Créer un Utilisateur')
             ->setPageTitle('index', 'Créer un Utilisateur');
     }
+
+    
 
 }

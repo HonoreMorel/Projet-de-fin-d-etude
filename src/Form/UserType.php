@@ -24,7 +24,9 @@ class UserType extends AbstractType
                 'second_options' => ['label' => 'Répétez le mot de passe'],
             ])
             ->add('nickname')
-            ->add('photo', FileType::class)
+            ->add('photo',
+            FileType::class, [
+            'required' => false])
         ;
     }
 

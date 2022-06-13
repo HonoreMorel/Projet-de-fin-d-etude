@@ -26,7 +26,7 @@ class TimelineCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/'),
+            ImageField::new('image')->setUploadDir('public/img/dinosaur')->setBasePath('/img/'),
             TextField::new('date'),
             TextEditorField::new('description'),
         ];
