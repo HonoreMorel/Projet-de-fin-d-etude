@@ -71,7 +71,6 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Dinosaure');
         yield MenuItem::linkToCrud('Dinosaures', "fa-solid fa-hippo", Dinosaur::class);
-        yield MenuItem::linkToCrud("Plus d'Informations", "fa-solid fa-info", MoreInformation::class);
         yield MenuItem::linkToCrud('Medias', "fa-solid fa-photo-film", Media::class);
         yield MenuItem::linkToCrud('Classification',"fa-solid fa-magnifying-glass", Classification::class);
         yield MenuItem::linkToCrud('Chronologie', "fa-solid fa-timeline", Timeline::class);

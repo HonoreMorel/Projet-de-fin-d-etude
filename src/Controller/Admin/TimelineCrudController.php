@@ -26,9 +26,9 @@ class TimelineCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/'),
-            TextField::new('date'),
-            TextEditorField::new('description'),
+            ImageField::new('image', 'Image')->setUploadDir('public/img/')->setBasePath('/img/'),
+            TextField::new('date', 'Date'),
+            TextEditorField::new('description', 'Description'),
         ];
     }
     
@@ -44,6 +44,7 @@ class TimelineCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', "Création d'une Frise Chronologique")
+            ->setPageTitle('new', "Modifier la Frise Chronologique")
             ->setPageTitle('index', 'Frise Chronologique')
             ->showEntityActionsInlined()
             
