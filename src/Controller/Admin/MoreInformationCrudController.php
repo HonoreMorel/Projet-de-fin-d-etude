@@ -23,7 +23,7 @@ class MoreInformationCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           
+        
             TextField::new('title', 'Titre'),
             ImageField::new('image')->setUploadDir('public/img/')->setBasePath('img/'),
             TextEditorField::new('description', 'Description'),
@@ -36,14 +36,17 @@ class MoreInformationCrudController extends AbstractCrudController
     {
         return $actions
             ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
-                return $action->setIcon('fa-solid fa-info')->setLabel("Ajouter plus d'information");
+                return $action->setIcon('fa-solid fa-info')->setLabel("Ajouter des d'informations");
             });
     }
     
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', "Ajouter plus d'information")
-            ->setPageTitle('index', "Ajouter plus d'information");
+            ->setPageTitle('new', "Ajouter des d'informations")
+            ->setPageTitle('index', "Plus d'informations")
+            ->showEntityActionsInlined()
+            
+            ;
     }
 }

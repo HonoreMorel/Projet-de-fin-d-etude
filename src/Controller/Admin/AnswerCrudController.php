@@ -40,7 +40,10 @@ class AnswerCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', 'Créer une Réponse')
-            ->setPageTitle('index', 'Créer une Réponse');
+            ->setPageTitle('index', 'Réponses')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 
 }

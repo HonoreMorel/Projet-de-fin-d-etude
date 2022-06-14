@@ -33,7 +33,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $photo;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Score::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Score::class, cascade:["remove"])]
     private $scores;
 
     public function __construct()

@@ -27,16 +27,16 @@ class MediaCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ChoiceField::new('type', 'type')->setChoices([
+            ChoiceField::new('type', 'Type')->setChoices([
                 'Podcast'=>'Podcast',
                 'Vidéo'=>'Vidéo',
                 
             ]),
-            TextareaField::new('code'),
-            AssociationField::new('dinosaurs'),
-            BooleanField::new('suggestion'),
+            TextareaField::new('code', 'Résumé'),
+            AssociationField::new('dinosaurs', 'Dinosaures'),
+            BooleanField::new('suggestion', 'Suggestion'),
             
-           
+        
         ];
     }
     public function configureActions(Actions $actions): Actions
@@ -50,8 +50,11 @@ class MediaCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer un Média')
-            ->setPageTitle('index', 'Créer un Média');
+            ->setPageTitle('new', "Création d'un Média")
+            ->setPageTitle('index', 'Médias')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 /* 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void

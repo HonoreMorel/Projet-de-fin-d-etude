@@ -42,8 +42,11 @@ class SubjectCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer un Quizz')
-            ->setPageTitle('index', 'Créer un Quizz');
+            ->setPageTitle('new', 'Ajouter un Quizz')
+            ->setPageTitle('index', 'Quizz')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 
     public function configureAssets(Assets $assets): Assets

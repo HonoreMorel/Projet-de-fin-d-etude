@@ -48,7 +48,11 @@ class QuestionCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', 'Créer une Question')
-            ->setPageTitle('index', 'Créer une Question');
+            ->setPageTitle('index', 'Questions')
+            ->showEntityActionsInlined()
+            
+            
+            ;
     }
 
    /*  public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
