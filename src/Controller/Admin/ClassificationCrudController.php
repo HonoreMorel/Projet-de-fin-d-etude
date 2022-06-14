@@ -38,6 +38,7 @@ class ClassificationCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', "Création d'une Classification")
+            ->setPageTitle('new', "Modifier la Classification")
             ->showEntityActionsInlined()
 
             ;

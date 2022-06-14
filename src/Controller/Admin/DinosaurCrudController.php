@@ -8,6 +8,7 @@ use App\Controller\Admin\ImageCrudController;
 use App\Controller\Admin\ActivityCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -37,12 +38,12 @@ class DinosaurCrudController extends AbstractCrudController
             TextField::new('common_name','Nom Commun'),
             TextField::new('scientific_name',"Nom scientifique"),
 
-            FormField::addTab('Fiche tecnique'),
+            FormField::addTab('Fiche technique'),
             IntegerField::new('length','Longueur (cm)')->hideOnIndex(),
             IntegerField::new('height','Hauteur (cm)')->hideOnIndex(),
             IntegerField::new('weight','Poids (kg)')->hideOnIndex(),
             ImageField::new('img_height', 'Taille Dinosaure Humain')->setUploadDir('public/img/')->setBasePath('/img/'),
-            CollectionField::new('images')->useEntryCrudForm(ImageCrudController::class),
+            CollectionField::new('images')->useEntryCrudForm(ImageCrudController::class)->hideOnIndex(),
             TextareaField::new('description')->hideOnIndex(),
 
             FormField::addTab('Information supplémentaire'), 
@@ -102,11 +103,19 @@ class DinosaurCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', "Création d'un Dinosaure")
+            ->setPageTitle('edit', "Modification du Dinosaure")
             ->setPageTitle('index', 'Dinosaures')
             ->showEntityActionsInlined()
 
             ;
     }
 
-    
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets
+            ->addCssFile('/admin/css/imageCrudController.css')
+            ->addCssFile('/admin/css/moreInformationCrudController.css')
+
+        ;
+    }
 }

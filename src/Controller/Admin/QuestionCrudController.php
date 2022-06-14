@@ -12,6 +12,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -29,9 +30,8 @@ class QuestionCrudController extends AbstractCrudController
            
             
             TextField::new('statement','Question')->setColumns('col-md-12'),
-            ImageField::new('image')->setUploadDir('public/img/')
-            ->setBasePath('/img/')->setColumns('col-lg-12')->addCssClass('changewidth'),
-            
+            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/')->setColumns('col-lg-12')->addCssClass('changewidth'),
+            TextareaField::new('explication','Explication')->setColumns('col-lg-12'),
             CollectionField::new('answers', 'Réponses')->useEntryCrudForm(AnswerCrudController::class)->setColumns('col-lg-12'),
         ];
     }

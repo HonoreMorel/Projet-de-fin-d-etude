@@ -25,7 +25,11 @@ class ImageCrudController extends AbstractCrudController
     {
         return [
             
+<<<<<<< HEAD
             ImageField::new('url', 'Sélectionnez votre Image')->setUploadDir('/public/img/')->setBasePath('/img/')->setColumns(12)->addCssClass('changewidth'),
+=======
+            ImageField::new('url', 'Sélectionner votre Image')->setUploadDir('public/img/')->setBasePath('/img/')->setColumns(12)->addCssClass('changewidth'),
+>>>>>>> 8a845f8a6b41c5d8b0cc6bfcfd3ad476d2ef8184
             TextField::new('alt', 'Texte Alternatif')->setColumns(12),
             BooleanField::new('main_image')->setColumns(12),
         ];
@@ -48,14 +52,6 @@ class ImageCrudController extends AbstractCrudController
             
             
             ;
-    }
-
-    public function configureAssets(Assets $assets): Assets
-    {
-        return $assets
-            ->addCssFile('/admin/ImageCrudController.css')
-
-        ;
     }
     
 }

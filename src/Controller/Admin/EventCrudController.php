@@ -41,6 +41,7 @@ class EventCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', "Création d'événement")
+            ->setPageTitle('edit', "Modifier l'événement")
             ->setPageTitle('index', 'Événements')
             ->showEntityActionsInlined()
             
