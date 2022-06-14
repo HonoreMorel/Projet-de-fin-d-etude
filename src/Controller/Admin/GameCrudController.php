@@ -28,6 +28,7 @@ class GameCrudController extends AbstractCrudController
             TextEditorField::new('instructions','Instructions'),
         ];
     }
+    
     public function configureActions(Actions $actions): Actions
     {
         return $actions
@@ -39,8 +40,11 @@ class GameCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer un Jeu')
-            ->setPageTitle('index', 'Créer un Jeu');
+            ->setPageTitle('new', "Création d'un Jeu")
+            ->setPageTitle('index', 'Jeux')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 
 }

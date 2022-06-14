@@ -30,9 +30,9 @@ class ActivityCrudController extends AbstractCrudController
             TextareaField::new('description','Description'),
             TextField::new('language', 'Langue'),
             TextField::new('place', 'Lieu'),
-            IntegerField::new('average_duration', 'Duration'),
+            IntegerField::new('average_duration', 'Durée moyenne'),
             IntegerField::new('tarif', 'Tarif'),
-            AssociationField::new('filter')->setCrudController(FiterCrudController::class),
+            AssociationField::new('filter', 'Filtres')->setCrudController(FiterCrudController::class),
 
 
 
@@ -50,7 +50,10 @@ class ActivityCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer une activité')
-            ->setPageTitle('index', 'Créer une activité');
+            ->setPageTitle('new', "Création d'une activité")
+            ->setPageTitle('index', 'Activités')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 }
