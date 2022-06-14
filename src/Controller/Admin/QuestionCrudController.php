@@ -7,7 +7,9 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Controller\Admin\AnswerCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -25,9 +27,12 @@ class QuestionCrudController extends AbstractCrudController
     {
         return [
            
-            TextField::new('statement','Question'),
-            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/'),
-            CollectionField::new('answers', 'Réponses')->useEntryCrudForm(AnswerCrudController::class),
+            
+            TextField::new('statement','Question')->setColumns('col-md-12'),
+            ImageField::new('image')->setUploadDir('public/img/')
+            ->setBasePath('/img/')->setColumns('col-lg-12')->addCssClass('changewidth'),
+            
+            CollectionField::new('answers', 'Réponses')->useEntryCrudForm(AnswerCrudController::class)->setColumns('col-lg-12'),
         ];
     }
     
@@ -53,4 +58,9 @@ class QuestionCrudController extends AbstractCrudController
         
         $entityManager->flush();
     } */
+
+
+
+    
+
 }

@@ -23,9 +23,9 @@ class AnswerCrudController extends AbstractCrudController
     {
         return [
             
-            TextField::new('answer', 'Réponse'),
-            BooleanField::new('state'),
-            TextareaField::new('explication','Explication'),
+            TextField::new('answer', 'Réponse')->setColumns('col-lg-12'),
+            BooleanField::new('state', "état"),
+            TextareaField::new('explication','Explication')->setColumns('col-lg-12'),
         ];
     }
     public function configureActions(Actions $actions): Actions

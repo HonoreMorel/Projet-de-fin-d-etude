@@ -6,7 +6,9 @@ use App\Entity\Subject;
 use App\Controller\Admin\QuestionCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -22,8 +24,10 @@ class SubjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+            FormField::addTab('Sujet'),
             TextField::new("subject", "Sujet"),
-            CollectionField::new('questions')->useEntryCrudForm(QuestionCrudController::class),
+            FormField::addTab('Questions'),
+            CollectionField::new('questions')->useEntryCrudForm(QuestionCrudController::class)->setColumns('col-lg-12'),
         ];
     }
     
@@ -42,4 +46,18 @@ class SubjectCrudController extends AbstractCrudController
             ->setPageTitle('index', 'Créer un Quizz');
     }
 
+    public function configureAssets(Assets $assets): Assets
+    {
+        return $assets
+            
+            // it's equivalent to adding this inside the <head> element:
+            // <link rel="stylesheet" href="{{ asset('...') }}">
+            ->addCssFile('/admin/css/questioncrudcontroller.css')
+            
+
+            
+
+          
+        ;
+    }
 }
