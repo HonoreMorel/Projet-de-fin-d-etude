@@ -1,0 +1,7 @@
+{% for question in questions %}
+    <p>{{question[i].statement}}</p>
+    {% for question in question.answers %}
+        <p>{{question.answer}}</p>
+    
+    {% endfor %}
+{% endfor %}

@@ -19,8 +19,7 @@ class Answer
     #[ORM\Column(type: 'boolean')]
     private $state;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $explication;
+   
 
     #[ORM\ManyToOne(targetEntity: Question::class, inversedBy: 'answers')]
     #[ORM\JoinColumn(nullable: false)]
@@ -55,17 +54,7 @@ class Answer
         return $this;
     }
 
-    public function getExplication(): ?string
-    {
-        return $this->explication;
-    }
-
-    public function setExplication(string $explication): self
-    {
-        $this->explication = $explication;
-
-        return $this;
-    }
+    
 
     public function getQuestion(): ?Question
     {

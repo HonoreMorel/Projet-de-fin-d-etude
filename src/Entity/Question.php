@@ -31,6 +31,9 @@ class Question
     #[ORM\OneToMany(mappedBy: 'question', targetEntity: Answer::class, cascade: ['persist','remove'],orphanRemoval:true)]
     private $answers;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $explication;
+
     public function __construct()
     {
         $this->answers = new ArrayCollection();
@@ -110,6 +113,18 @@ class Question
     public function __toString(): string
     {
         return $this->statement;
+    }
+
+    public function getExplication(): ?string
+    {
+        return $this->explication;
+    }
+
+    public function setExplication(?string $explication): self
+    {
+        $this->explication = $explication;
+
+        return $this;
     }
     
 }
