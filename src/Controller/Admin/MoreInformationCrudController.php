@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -24,10 +25,10 @@ class MoreInformationCrudController extends AbstractCrudController
     {
         return [
         
-            TextField::new('title', 'Titre'),
-            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('img/'),
-            TextEditorField::new('description', 'Description'),
-            TextField::new('alt','Texte alternatif'),
+            TextField::new('title', 'Titre')->setColumns(12),
+            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('img/')->setColumns(12)->addCssClass('changewidth'),
+            TextareaField::new('description', 'Description')->setColumns(12),
+            TextField::new('alt','Texte alternatif')->setColumns(12),
             
         ];
     }

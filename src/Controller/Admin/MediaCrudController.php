@@ -32,8 +32,8 @@ class MediaCrudController extends AbstractCrudController
                 'Vidéo'=>'Vidéo',
                 
             ]),
-            TextareaField::new('code', 'Résumé'),
-            AssociationField::new('dinosaurs', 'Dinosaures'),
+            TextareaField::new('code', "Code d'intégration")->hideOnIndex(),
+            AssociationField::new('dinosaurs', 'Dinosaure(s)'),
             BooleanField::new('suggestion', 'Suggestion'),
             
         
@@ -51,6 +51,7 @@ class MediaCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', "Création d'un Média")
+            ->setPageTitle('edit', "Modifier le Média")
             ->setPageTitle('index', 'Médias')
             ->showEntityActionsInlined()
             

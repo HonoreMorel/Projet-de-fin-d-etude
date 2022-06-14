@@ -27,11 +27,11 @@ class ActivityCrudController extends AbstractCrudController
         return [
             
             TextField::new('title','Titre'),
-            TextareaField::new('description','Description'),
+            TextareaField::new('description','Description')->hideOnIndex(),
             TextField::new('language', 'Langue'),
             TextField::new('place', 'Lieu'),
-            IntegerField::new('average_duration', 'Durée moyenne'),
-            IntegerField::new('tarif', 'Tarif'),
+            IntegerField::new('average_duration', 'Durée moyenne (jours)'),
+            IntegerField::new('tarif', 'Tarif (€)'),
             AssociationField::new('filter', 'Filtres')->setCrudController(FiterCrudController::class),
 
 

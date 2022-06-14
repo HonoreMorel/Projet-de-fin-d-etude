@@ -49,6 +49,7 @@ class UserCrudController extends AbstractCrudController
         return $crud
             ->setPageTitle('index', 'Utilisateurs 👥')
             ->setPageTitle('edit', 'Modifier un Utilisateur 👤')
+            ->showEntityActionsInlined()
             
             ;
     }

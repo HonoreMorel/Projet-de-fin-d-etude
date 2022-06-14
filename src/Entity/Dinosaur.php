@@ -33,7 +33,7 @@ class Dinosaur
     #[ORM\Column(type: 'text')]
     private $description;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $img_height;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -51,7 +51,7 @@ class Dinosaur
     #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: Image::class, cascade:['persist'], orphanRemoval:true)]
     private $images;
 
-    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: MoreInformation::class)]
+    #[ORM\OneToMany(mappedBy: 'dinosaur', targetEntity: MoreInformation::class, cascade:['persist'])]
     private $moreInformation;
 
     #[ORM\ManyToMany(targetEntity: Media::class, mappedBy: 'dinosaurs', cascade:['persist'])]
