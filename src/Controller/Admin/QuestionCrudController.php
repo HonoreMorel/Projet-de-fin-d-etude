@@ -7,9 +7,12 @@ use Doctrine\ORM\EntityManagerInterface;
 use App\Controller\Admin\AnswerCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -25,9 +28,11 @@ class QuestionCrudController extends AbstractCrudController
     {
         return [
            
-            TextField::new('statement','Question'),
-            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/'),
-            CollectionField::new('answers', 'Réponses')->useEntryCrudForm(AnswerCrudController::class),
+            
+            TextField::new('statement','Question')->setColumns('col-md-12'),
+            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/')->setColumns('col-lg-12')->addCssClass('changewidth'),
+            TextareaField::new('explication','Explication')->setColumns('col-lg-12'),
+            CollectionField::new('answers', 'Réponses')->useEntryCrudForm(AnswerCrudController::class)->setColumns('col-lg-12'),
         ];
     }
     
@@ -43,7 +48,11 @@ class QuestionCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', 'Créer une Question')
-            ->setPageTitle('index', 'Créer une Question');
+            ->setPageTitle('index', 'Questions')
+            ->showEntityActionsInlined()
+            
+            
+            ;
     }
 
    /*  public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
@@ -53,4 +62,9 @@ class QuestionCrudController extends AbstractCrudController
         
         $entityManager->flush();
     } */
+
+
+
+    
+
 }

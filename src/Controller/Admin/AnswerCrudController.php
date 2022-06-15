@@ -23,9 +23,9 @@ class AnswerCrudController extends AbstractCrudController
     {
         return [
             
-            TextField::new('answer', 'Réponse'),
-            BooleanField::new('state'),
-            TextareaField::new('explication','Explication'),
+            TextField::new('answer', 'Réponse')->setColumns('col-lg-12'),
+            BooleanField::new('state', "état"),
+            
         ];
     }
     public function configureActions(Actions $actions): Actions
@@ -40,7 +40,10 @@ class AnswerCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', 'Créer une Réponse')
-            ->setPageTitle('index', 'Créer une Réponse');
+            ->setPageTitle('index', 'Réponses')
+            ->showEntityActionsInlined()
+            
+            ;
     }
 
 }

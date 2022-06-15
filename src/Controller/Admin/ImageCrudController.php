@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Image;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
@@ -24,9 +25,9 @@ class ImageCrudController extends AbstractCrudController
     {
         return [
             
-            ImageField::new('url', 'Sélectionner votre Image')->setUploadDir('public/img/')->setBasePath('/img/'),
-            TextField::new('alt', 'Texte Alternatif'),
-            BooleanField::new('main_image'),
+            ImageField::new('url', 'Sélectionner votre Image')->setUploadDir('public/img/')->setBasePath('/img/')->setColumns(12)->addCssClass('changewidth'),
+            TextField::new('alt', 'Texte Alternatif')->setColumns(12),
+            BooleanField::new('main_image')->setColumns(12),
         ];
     }
     
@@ -42,6 +43,11 @@ class ImageCrudController extends AbstractCrudController
     {
         return $crud
             ->setPageTitle('new', 'Créer une Image')
-            ->setPageTitle('index', 'Créer une Image');
+            ->setPageTitle('index', 'Images')
+            ->showEntityActionsInlined()
+            
+            
+            ;
     }
+    
 }

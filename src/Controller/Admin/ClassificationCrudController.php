@@ -34,4 +34,14 @@ class ClassificationCrudController extends AbstractCrudController
             });
     }
     
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('new', "Création d'une Classification")
+            ->setPageTitle('new', "Modifier la Classification")
+            ->showEntityActionsInlined()
+
+            ;
+    }
+
 }

@@ -40,8 +40,12 @@ class EventCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('new', 'Créer un événement')
-            ->setPageTitle('index', 'Créer un événement');
+            ->setPageTitle('new', "Création d'événement")
+            ->setPageTitle('edit', "Modifier l'événement")
+            ->setPageTitle('index', 'Événements')
+            ->showEntityActionsInlined()
+            
+            ;
     }
     
 }

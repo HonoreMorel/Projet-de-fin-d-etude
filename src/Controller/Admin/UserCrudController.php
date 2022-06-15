@@ -8,6 +8,7 @@ use App\Controller\Admin\SubjectCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
@@ -46,9 +47,11 @@ class UserCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Liste des Utilisateurs 👥')
-            ->setPageTitle('edit', 'Modifier un Utilisateur 👤');
+            ->setPageTitle('index', 'Utilisateurs 👥')
+            ->setPageTitle('edit', 'Modifier un Utilisateur 👤')
+            ->showEntityActionsInlined()
             
+            ;
     }
     
 
