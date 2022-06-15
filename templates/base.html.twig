@@ -2,7 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Dinoscopia{% endblock %}</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Lien style CSS -->
+    <link rel="stylesheet" href="/css/style-base.css">
+    <link rel="stylesheet" href="/css/index-style.css">
+    
+
+
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -14,6 +24,143 @@
         {% endblock %}
     </head>
     <body>
+
+         <!-- Début du HEADER-->
+    <header>
+
+      <!-- Début de la NAVBAR -->
+      
+         <nav class="navbar navbar-expand-xl navbar-light fixed-top" id="barre-de-navigation">
+  
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <img src="/images/logo-desktop.png" alt="">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse justify-content-center text-xl-center" id="navbarNavAltMarkup">
+              <div class="navbar-nav d-flex flex-row">
+                <a class="nav-item nav-link onglet" href="#">Les espèces</a>
+                <a class="nav-item nav-link onglet" href="#">Multimédias</a>
+                <a class="nav-item nav-link onglet" href="#">Les activités</a>
+                <a class="nav-item nav-link onglet" href="#">Les évènements</a>
+              </div>
+            </div>
+  
+            <div class="collapse navbar-collapse justify-content-end text-right" id="navbarNavAltMarkup">
+              <div class="navbar-nav d-flex flex-row">
+                <a class="nav-item nav-link" href="#">
+
+                 <!-- <img class="icone-nav" src="/images/compte.png" alt="">-->
+
+                 <div class="modal" id="modal">
+    
+    <div class="modal-header">
+          <div class="title">Connexion</div>
+          <button data-close-button class="close-button">&times;</button>
+        </div>
+         <div class="modal-body">
+            <form action="">
+              <div class="inputs-only">
+                  <input type="email" name="" id="" placeholder="Votre adresse email">
+                  <input type="password" name="" id=""placeholder="Votre mot de passe">
+                  <a class="pwd-forgotten" href=""> Mot de passe oublié?</a>
+              </div>
+              <button type="submit" class="connect-btn">Se connecter</button>
+            </form>    
+            <section>
+              <h1 class="sign-up-title">Inscription</h1>
+              
+              <a class="create-account-link" href="" >
+                  <p>Je crée mon compte </p> <div class="space">›</div>    
+            </a>
+            </section>
+        </div>
+  </div>
+  <div id="overlay"></div>
+                  
+                    <button type="button" data-modal-target="#modal" class="sign-up"></button>
+                
+                </a>
+                </a>
+                <a class="nav-item nav-link" href="#">
+                  <img class="icone-nav" src="/images/loupe.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+  
+      <!-- Fin de la NAVBAR -->
+  
+      </header>
+    <!-- Fin du HEADER-->
+
         {% block body %}{% endblock %}
+<div style="height: 800px;"></div>
+<!-- Début du Footer -->
+    <footer>
+
+       <div class="container">
+        
+        <div class="row" id="information-site">
+
+          <div class="col-4 text-center" id="info-musee">
+           <h3>A propos</h3>
+           <p>Où trouver le musée</p>
+           <p>Muséum national d'Histoire naturelle<br>57 rue Cuvier, 75005 Paris France </p>
+          </div>
+
+          <div class="col-4 text-center d-inline-flex flex-column" id="info-scopia">
+           <h3>Scopia</h3>
+            <a href="#">Qui Sommes-nous ?</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contacts</a>
+            <a href="#">Muséum d'Histoire Naturelle</a>
+            <a href=""><img src="/images/logo-little.png" alt=""></a>
+          </div>
+
+          <div class="col-4 text-center" id="icone-reseau">
+           <h3>Nous suivre</h3>
+           <button type="button" class="icone-footer">
+            <img src="/images/facebook.png" alt="">
+          </button>
+          <button type="button" class="icone-footer">
+            <img src="/images/twitter.png" alt="">
+          </button>
+          <button type="button" class="icone-footer">
+            <img src="/images/instagram.png" alt="">
+          </button>
+          <button type="button" class="icone-footer">
+            <img src="/images/youtube.png" alt="">
+          </button>
+
+
+           <h3>Recevez nos actualités</h3>
+           <button type="button" class="button-gradient-medium">
+            <button-text>S'inscrire</button-text>
+           </button>
+          </div>  
+        </div> 
+
+        <div class="row" id="mention-legale">
+          <div class="col d-inline-flex justify-content-between">
+            <a href="#">Mentions légales</a>
+            <a href="#">Gestion de confidentialités</a>
+            <a href="#">Données personelles</a>
+            <a href="#">Crédits photographiques</a>
+            <a href="#">Cookies</a>
+            <a href="#">Crédits</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Fin du Footer -->
+
+<script src="/js/modal.js"></script>
     </body>
+
 </html>

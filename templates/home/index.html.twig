@@ -1,16 +1,166 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/index-style.css">
+<link rel="stylesheet" href="/css/style-base.css">
+{% endblock %}
+
+
 {% block title %}Dinoscopia{% endblock %}
 
+
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+ <!-- Début du Main-->
+    <main id="dinoscopia-index">
+      <!-- Début Article-->
+      <article id="nouvelle-decouverte">
 
-<div class="example-wrapper">
-    <h1>Youpi !</h1>
+      <video autoplay muted loop id="background-video">
+        <source src="/videos/video-test.mp4" type="video/mp4">
+      </video>
 
+        <div class="container" id="padding-top-espacement-nav">
+          <div class="row">
+            <div class="col-6 d-flex flex-column">
+              <h1>No<span class="gradient-pomme-poussin ">u</span>velles Découv<span class="gradient-pomme-poussin">e</span>rtes</h1>
+              <header-text>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</header-text>
+              <button type="button" class="button-gradient-little">
+                <button-text>Découvrir</button-text>
+              </button>
+            </div>
+          </div>
+        </div>
 
-</div>
+        <div class="container-fluid" id="background-video-bottom">
+          <div class="row">
+            <div class="col d-flex justify-content-end">
+              <button type="button" class="icone" id="button-video">
+                <img id="video-pp" src="/images/pause.png" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+        </div>
+          
+      </article>
+      <!-- Fin Article-->
+
+      <!-- Début Section-->
+      <section id="a-la-une">
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2>A la <span class="gradient-pomme-poussin">u</span>ne</h2>
+            </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner carousel-inner-modif">
+                  <div class="carousel-item active">  
+
+                    <img class="d-block w-100" src="/images/Photo.png" alt="First slide">
+                    <button type="button" class="icone-modal" data-toggle="modal" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal">
+                      <img src="/images/play.png" alt="">
+                    </button>
+                  </div>
+                  <div class="carousel-item ">
+
+                    <img class="d-block w-100" src="/images/Photo1.png" alt="Second slide">
+                    <button type="button" class="icone-modal" data-toggle="modal" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal">
+                      <img src="/images/play.png" alt="">
+                    </button>
+                  </div>
+                  <div class="carousel-item">
+
+                    <img class="d-block w-100" src="/images/Photo2.png" alt="Third slide">
+                    <button type="button" class="icone-modal" data-toggle="modal" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal">
+                      <img src="/images/play.png" alt="">
+                    </button>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+                  
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="desactive active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1" class="desactive"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2" class="desactive"></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+
+                <div class="modal-body">
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>   
+                </div>
+                
+                <!-- 16:9 aspect ratio -->
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </section>
+      <!-- Fin Section -->
+
+      <!-- Début Section-->
+      <section id="les-informations-du-jour">
+        <div class="container">
+          <div class="row">
+            <div class="col d-flex justify-content-start">
+              <h2>Les inform<span class="gradient-pomme-poussin">a</span>tions du jour</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-row justify-content-start" id="scroll-horizontal">
+          
+          <div class="d-flex">
+              <div class="card card-medium" id="card-scroll">
+                <img class="card-img-top card-img-top-medium" src="/images/Photo.png" alt="Card image cap">
+                <div class="card-body card-body-medium">
+                 <titre-card class="card-text">Some quick example text.</titre-card>
+                </div>
+              </div>
+
+              <div class="card card-medium" id="card-scroll">
+                <img class="card-img-top card-img-top-medium" src="/images/Photo.png" alt="Card image cap">
+                <div class="card-body card-body-medium">
+                 <titre-card class="card-text">Some quick example text.</titre-card>
+                </div>
+              </div>
+
+              <div class="card card-medium" id="card-scroll">
+                <img class="card-img-top card-img-top-medium" src="/images/Photo.png" alt="Card image cap">
+                <div class="card-body card-body-medium">
+                 <titre-card class="card-text">Some quick example text.</titre-card>
+                </div>
+              </div>
+          </div>
+          
+        </div>
+      </section>
+      <!-- Fin Section -->
+
+    </main>
+    <!-- Fin du Main-->
+<script src="/js/video-play.js"></script>
 {% endblock %}
