@@ -1,0 +1,120 @@
+/*** Index ***/
+
+/** Règles Générales **/
+
+/** Texte **/
+
+h1, h2, header-text{
+    color: var(--dino-neige);
+}
+
+/*** Background Vidéo ***/
+
+#background-video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 118px;
+    bottom: 0;
+    z-index: -1;
+}
+
+/*** Article nouvelle-decouverte ***/
+#background-video-bottom{
+    padding-bottom: 50px;
+}
+
+/*** Section a-la-une ***/
+
+/** Background **/
+#a-la-une{
+    background: content-box no-repeat url("../images/fond-…-la-une.jpg")
+}
+
+/** Caroussel **/
+.carousel-inner-modif{
+    border-radius: 62px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url("../images/fleche-gauche.png") !important;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-next-icon{
+    background-image: url("../images/fleche-droite.png") !important;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-indicators{
+    position: relative;
+}
+
+.carousel-indicators .desactive{
+    background: url("../images/point-white.png") !important;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-indicators .active{
+    background: url("../images/point-gradient.png") !important;
+    width: 40px;
+    height: 40px;
+}
+
+/* Modal Vidéo */
+.icone-modal{
+    position: absolute;
+    left: 500px; bottom: 232px;
+    border: 0;
+    background-color: transparent;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-dialog {
+    max-width: 1080px;
+    margin: auto;
+}
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+
+.close {
+  position:absolute;
+  right:-30px;
+  top:0;
+  z-index:1;
+  font-size:2rem;
+  font-weight: normal;
+  color:#fff;
+  opacity:1;
+}
+
+/*** Section les-informations-du-jour ***/
+
+/** Background **/
+#les-informations-du-jour{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(rgba(250, 250, 25, 0.5), rgba(81, 255, 81, 0.5)), url(../images/fond_informations-du-jour.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#scroll-horizontal{
+    overflow-x: scroll;
+    overflow-wrap: none;
+}
+
+#card-scroll{
+    margin: 24px;
+}
