@@ -1,0 +1,384 @@
+/***** Import des Polices ****/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+
+/*@font-face {
+    font-family: 'Comfortaa';
+    src: url();
+    src: url() format(),
+         url() format();
+}*/
+
+/*** Règles Générales ***/
+html{
+    font-size: 62.5% !important; /* 1 rem = 10px */
+}
+
+/** Gérer espace avec barre de navigation fixé **/
+#padding-top-espacement-nav{
+    padding-top: 1px;
+}
+
+/** Typographie **/
+h1, h2, h3{
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+h1{
+    font-size: 12.0rem;
+}
+
+h2{
+    font-size: 8.0rem;
+}
+
+h3{
+    font-size: 3.0rem;
+}
+
+p, a, blockquote{
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+
+button-text{
+    font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+header-text{
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+titre-card{
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+nom-scientifique, info-scientifique{
+    font-family: 'EB Garamond', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 2.0rem;
+}
+
+/** Couleurs **/
+:root {
+    --dino-igloo: #98FFF3;
+    --dino-pomme: #39FF19;
+    --dino-lavande: #FF98FB;
+    --dino-poussin: #FAFF19;
+    --dino-cassis: #A819FF;
+    --dino-persian: #FF19A3;
+    --dino-neige: #F8F8F8;
+    --dino-cendre: #0E0E0E;
+
+    --dino-gradient: (linear-gradient(#39FF19, #98FFF3));
+}
+
+.gradient-pomme-poussin{
+    color: var(--dino-pomme);
+}
+
+/*** Navigation ***/
+
+/** Background **/
+#barre-de-navigation, #nav-fiche{
+    background-color: var(--dino-cendre);
+}
+
+/** Onglet **/
+.onglet{
+    margin-right: 2.0rem;
+    margin-left: 2.0rem;
+    font-size: 2.0rem;
+    font-weight: normal;
+    color: var(--dino-neige) !important;
+}
+
+.onglet:hover{
+    color: var(--dino-pomme) !important;
+    text-decoration: none;
+}
+
+.onglet:active {
+    color: var(--dino-igloo) !important; 
+    text-decoration: none;
+}
+
+/** Icones **/
+
+.icone-nav{
+    border: 0;
+    background-color: transparent;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    margin-top: 2.0rem;
+    margin-bottom: 2.0rem;
+}
+
+/** Responsive **/
+
+/* Menu Burger */
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(248, 248, 248, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/*** Footer ***/
+
+/** Background **/
+footer{
+    background-color: var(--dino-cendre)
+    }
+
+/** Margin et Paddin **/
+#information-site{ 
+    padding-top: 3rem; /* Règle la taille du haut du footer */
+}
+
+#mention-legale{
+    padding-bottom: 3rem; /* Règle la taille du bas du footer */
+}
+
+/** Texte **/
+footer h3, p{
+    color: var(--dino-neige);
+    margin-bottom: 2rem;
+}
+
+
+/** Lien **/
+footer a{
+    color: var(--dino-neige);
+    text-decoration: none;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+footer a:hover {
+    color: var(--dino-pomme);
+    text-decoration: none;
+}
+
+/** Icones **/
+.icone-footer{
+    border: 0;
+    background-color: transparent;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/**********************CSS MODAL********************************/
+
+.sign-up{
+    background: url('..//images/compte.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80px;
+    width: 80px;
+
+}
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  display:block;
+  height: 500px;
+  position: absolute;
+  top: 480px;
+  left: 70%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  box-shadow: 2px 2px 15px gray;
+  border-radius: 1.25rem;
+  z-index: 10;
+  background-color: white;
+  width: 19%;
+  margin-bottom: -50px;
+  max-width: 310px;
+  padding-top: 1rem;
+
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modal-header {
+  padding: 0.625rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family:'Nunito', Arial, Helvetica, sans-serif;
+  
+}
+
+.modal-header .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 30%;
+  
+}
+
+button.close-button {
+  display: block;
+  padding-left: 0rem;
+  cursor: pointer;
+  width: 2rem;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color:black;
+}
+
+.modal-body {
+  width: 26.25rem;
+  padding-top:1rem;
+  padding-bottom:2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-family:'Nunito', Arial, Helvetica, sans-serif;
+}
+
+form{
+  width: 100%;
+  margin-top: -40px
+}
+
+.inputs-only{
+  width: 25rem;
+  padding: auto;
+  
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.pwd-forgotten{
+  display: block;
+  text-decoration: none;
+  text-align: right;
+  width: 100%;
+  color: black;
+}
+
+.pwd-forgotten:hover{
+  color: red;
+}
+
+input{
+  background-color: #D9D9D9;
+  border: none;
+  width:100%;
+  height: 3rem;
+  margin: 1rem auto;
+  font-size: 1.3rem;
+  
+}
+
+::placeholder{
+  color: black;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.connect-btn{
+  display: block;
+  width: 130%;
+  height: 4rem;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  margin-left: -0.5rem;
+  border-radius: 2rem;
+  border: none;
+  background-color:  #999999;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bolder
+
+}
+
+.connect-btn:hover{
+  box-shadow: 2px 2px 15px gray;
+}
+
+.sign-up-title{
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: left;
+  color: black;
+}
+
+
+.create-account-link{
+  width: 26.9rem;
+  display: block;
+  font-size: 1.5rem;;
+  text-align: left;
+  padding-left: 2rem;
+  height: 5rem;
+  background-color: #B8B1B1;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 6rem;
+  border-top-left-radius: 1.25rem 1.25rem;
+  border-bottom-right-radius: 1.25rem 1.25rem;
+ 
+}
+
+.create-account-link:hover{
+  box-shadow: 2px 2px 5px rgb(74, 73, 73);
+  background-color:#6a6868;
+  color:white;
+  
+}
+.fa-angle-right{
+  display: inline-block;
+  font-size: 2rem;
+}
+
+.create-account-link div{
+  display: inline-block;
+  margin-left:9rem;
+  font-size: 3rem;
+}
+
+
+
+.create-account-link p{
+  display: inline-block;
+
+}
