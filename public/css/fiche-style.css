@@ -1,0 +1,185 @@
+/*** Fiche ***/
+
+/** Règles Générales **/
+
+/** Texte **/
+button-text{
+    color: var(--dino-cendre);
+}
+
+/*** Article fiche-technique ***/
+
+/** Background **/
+#fiche-technique{
+    background: linear-gradient(rgba(250, 250, 25, 0.5), rgba(81, 255, 81, 0.5)), url(../images/fond_informations-du-jour.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/** Fiche **/
+
+/* Texte */
+.card-body-fiche p{
+    color: var(--dino-cendre);
+}
+
+nom-scientifique{
+    color: var(--dino-neige);
+}
+
+info-scientifique{
+    color: var(--dino-neige);
+    font-size: 5rem;
+}
+
+info-scientifique span{
+    font-size: 16rem;
+}
+
+
+#dashboard-fiche h2, p{
+    color: var(--dino-neige);
+}
+
+/* Barre progression */
+
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: var(--dino-neige);
+  }
+  
+  /* The progress bar (scroll indicator) */
+  .progress-bar {
+    height: 8px;
+    background: var(--dino-pomme);
+    width: 0%;
+  }
+
+
+/*** Section informations-supplementaire **/
+#informations-supplementaires{
+    background: linear-gradient(rgba(250, 250, 25, 0.5), rgba(81, 255, 81, 0.5)), url(../images/fond-info-sup.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.picto-dino-livre{
+    position: relative;
+    bottom: 410px; left: 900px;
+}
+
+/*** Section dashboard-fiche ***/
+#dashboard-fiche{
+    background: var(--dino-cendre);
+}
+
+.ellipse-texte{
+    position: relative;
+    bottom: 0px; right: 375px;
+}
+
+
+/*** Section ses-contemporains **/
+#ses-contemporains{
+    background: linear-gradient(rgba(81, 255, 81, 0.5), rgba(81, 255, 81, 0.2)), url(../images/fond-contemporains.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*** Section contenu-associe ***/
+#contenu-associe{
+    background: var(--dino-cendre);
+}
+
+#contenu-associe h2, h3, p{
+    color: var(--dino-neige);
+}
+
+/** Caroussel **/
+#carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+  #carousel div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+  }
+  #carousel div img {
+    width: 400px;
+    transition: width 1s;
+  }
+  #carousel div.hideLeft {
+    left: 0%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel div.hideLeft img {
+    width: 200px;
+  }
+  #carousel div.hideRight {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel div.hideRight img {
+    width: 200px;
+  }
+  #carousel div.prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel div.prev img {
+    width: 300px;
+  }
+  #carousel div.prevLeftSecond {
+    z-index: 4;
+    left: 15%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel div.prevLeftSecond img {
+    width: 200px;
+  }
+  #carousel div.selected {
+    z-index: 10;
+    left: 50%;
+    transform: translateY(0px) translateX(-50%);
+  }
+  #carousel div.next {
+    z-index: 5;
+    left: 70%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel div.next img {
+    width: 300px;
+  }
+  #carousel div.nextRightSecond {
+    z-index: 4;
+    left: 85%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel div.nextRightSecond img {
+    width: 200px;
+  }
+  
+
+/*** Section podcast ***/
+#podcast{
+    background: linear-gradient(rgba(250, 250, 25, 0.2), rgba(81, 255, 81, 0.2)), url(../images/fond-contemporains.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#podcast h2, h3, p{
+    color: var(--dino-neige);
+}
