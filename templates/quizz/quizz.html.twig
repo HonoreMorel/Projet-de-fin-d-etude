@@ -1,7 +1,24 @@
-{% for question in questions %}
-    <p>{{question[i].statement}}</p>
-    {% for question in question.answers %}
-        <p>{{question.answer}}</p>
+
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/quizz.css')}}">
+{% endblock %}
+{% block title %}Hello QuizzController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<p id="score">Score: 0 points</p>
+<p id="timer">10</p>
+<div id="game" class="example-wrapper">
+
+
     
-    {% endfor %}
-{% endfor %}
+    
+</div>
+<script src="{{asset('js/quizz.js')}}"></script>
+{% endblock %}
+
+
