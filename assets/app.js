@@ -6,9 +6,16 @@ import Filter from './components/Filter';
 
 const App = () =>{
 
+    function close (){
+        document.getElementById('root').classList.remove('active');
+        document.getElementById('overlay').classList.remove('active');
+        
+    }
+
 
     return(
         <div id='recherche'>
+            <button onClick={close} data-close-button className="close-button">&times;</button>
 
             <div>
                 <Recherche/>

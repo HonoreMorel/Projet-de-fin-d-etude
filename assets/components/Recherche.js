@@ -10,18 +10,20 @@ const Recherche = () => {
         //exécuter du code que lorsque un state a changé
         React.useEffect(() =>{
             
-            //envoyer une requête ajax (fetch) pour consulter la bdd sur les dinosaures dont le nom contient ce qui a été tapé dans l'input
-            window.fetch('/search/' + recherche)
-    
-            .then(response => {
-                console.log(response);
-                return response.json()
-            })
-    
-            .then(resultat => {
-                setResult(resultat);
-                console.log(result);
-            })
+            if (recherche == '') {
+                setResult([]);
+            } else {
+                //envoyer une requête ajax (fetch) pour consulter la bdd sur les dinosaures dont le nom contient ce qui a été tapé dans l'input
+                window.fetch('/search/' + recherche)
+        
+                .then(response => {
+                    return response.json()
+                })
+                
+                .then(resultat => {
+                    setResult(resultat);
+                })
+            }
         }, [recherche]);
 
 
@@ -33,15 +35,20 @@ const Recherche = () => {
         //prévoir un container vide dans le JSX<ul> par ex
         return(
             <>
-                <input type="text" value={recherche} onChange={changeValue} placeholder='Recherche' />
+                <div className="column">
+                    <input type="text" value={recherche} onChange={changeValue} placeholder='Recherche' />
+                <div className="position">
+                    <ul>
+                        {result.map((res, i) => <li key={i}> <img src={"/img/"+res.url}/>{res.common_name}</li>)}
+                    </ul>
+                </div>
+                </div>
 
-                <ul>
-                    {result.map((res, i) => <li key={i}>{res}</li>)}
-                </ul>
-
+            <div className="flex">
                 <button type="button" >Reptiles Volants</button>
                 <button type="button" >Dinosaures</button>
                 <button type="button" >Reptiles Marins</button>
+            </div>
 
             </>
         )

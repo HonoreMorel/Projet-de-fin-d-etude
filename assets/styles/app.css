@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+
+
 body {
     background-color: lightgray;
 }
-
-#recherche{
-    padding: 20px;
+#root {
+    z-index: 10;
 }
 
-#recherche button {
+#recherche{
+    padding: 0px 20px 20px 20px;
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    z-index: 99;
+    position: relative;
+}
+
+#recherche .flex button {
     margin: 4px;
+    margin-top: 2em;
     margin-bottom: 2em;
     border-color: rgb(0, 221, 99);
 }
@@ -57,4 +68,50 @@ body {
 #recherche optgroup{
     text-align: center;
     font-size: 15px;
+}
+
+#recherche li{
+    list-style-type: none;
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    font-size: 1.2em;
+}
+
+#recherche ul{
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    position: absolute;
+    top: 0;
+}
+
+
+#recherche .column {
+    display: flex;
+    flex-direction: column;
+}
+
+#recherche .position{
+    position: relative;
+}
+
+#recherche input {
+    margin-bottom: 0;
+}
+
+#recherche img {
+    width: 90px;
+    margin-right: 2em;
+}
+
+#recherche .flex{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#recherche .close-button{
+    text-align: right;
+    width: 100%;
 }

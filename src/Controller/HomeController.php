@@ -38,7 +38,7 @@ class HomeController extends AbstractController
         $response=new Response($jsonContent);
         $response->headers->set("Content-type", "application/json");
 
-        return new Response($jsonContent);
+        return $response;
         
     }
 }
