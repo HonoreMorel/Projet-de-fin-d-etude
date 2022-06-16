@@ -8,16 +8,17 @@ const App = () =>{
 
 
     return(
-        <>
-        <div>
-            <Recherche/>
-        </div>
+        <div id='recherche'>
 
-        <div>
-            <Filter/>
-        </div>
+            <div>
+                <Recherche/>
+            </div>
+
+            <div>
+                <Filter/>
+            </div>
             
-        </>
+        </div>
     )
 }
 

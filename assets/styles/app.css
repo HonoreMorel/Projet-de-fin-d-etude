@@ -1,3 +1,60 @@
 body {
     background-color: lightgray;
 }
+
+#recherche{
+    padding: 20px;
+}
+
+#recherche button {
+    margin: 4px;
+    margin-bottom: 2em;
+    border-color: rgb(0, 221, 99);
+}
+
+#recherche label {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#famille  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#periode  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#localisation  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#fossiles  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+#recherche select {
+    padding: 3px;
+    background-color: lightgray;
+}
+
+#recherche option {
+    text-align: center;
+    font-size: 13px;
+}
+
+#recherche optgroup{
+    text-align: center;
+    font-size: 15px;
+}
