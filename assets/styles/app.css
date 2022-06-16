@@ -6,21 +6,19 @@ body {
     background-color: lightgray;
 }
 #root {
-    z-index: 10;
+    z-index: 1031;
 }
 
 #recherche{
     padding: 0px 20px 20px 20px;
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
-    z-index: 99;
-    position: relative;
+    position: absolute;
 }
 
 #recherche .flex button {
     margin: 4px;
     margin-top: 2em;
     margin-bottom: 2em;
-    border-color: rgb(0, 221, 99);
 }
 
 #recherche label {
