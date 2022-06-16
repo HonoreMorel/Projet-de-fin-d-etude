@@ -1,3 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+
+
 body {
     background-color: lightgray;
+}
+#root {
+    z-index: 1031;
+}
+
+#recherche{
+    padding: 0px 20px 20px 20px;
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+}
+
+#recherche .flex button {
+    margin: 4px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#recherche label {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#famille  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#periode  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#localisation  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+#fossiles  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+#recherche select {
+    padding: 3px;
+    background-color: lightgray;
+}
+
+#recherche option {
+    text-align: center;
+    font-size: 13px;
+}
+
+#recherche optgroup{
+    text-align: center;
+    font-size: 15px;
+}
+
+#recherche li{
+    list-style-type: none;
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    font-size: 1.2em;
+}
+
+#recherche ul{
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    position: absolute;
+    top: 0;
+}
+
+
+#recherche .column {
+    display: flex;
+    flex-direction: column;
+}
+
+#recherche .position{
+    position: relative;
+}
+
+#recherche input {
+    margin-bottom: 0;
+}
+
+#recherche img {
+    width: 90px;
+    margin-right: 2em;
+}
+
+#recherche .flex{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#recherche .close-button{
+    text-align: right;
+    width: 100%;
 }

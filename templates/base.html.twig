@@ -11,20 +11,23 @@
     <link rel="stylesheet" href="/css/style-base.css">
     <link rel="stylesheet" href="/css/index-style.css">
     
-
-
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
+    
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
 
+
+
+        
          <!-- Début du HEADER-->
     <header>
 
@@ -80,13 +83,12 @@
             </section>
         </div>
   </div>
-  <div id="overlay"></div>
                   
                     <button type="button" data-modal-target="#modals" class="sign-up"></button>
                 
                 </a>
                 </a>
-                <a class="nav-item nav-link" href="#">
+                <a id="research" class="nav-item nav-link" href="#">
                   <img class="icone-nav" src="/images/loupe.png" alt="">
                 </a>
               </div>
@@ -95,6 +97,8 @@
         </nav>
   
       <!-- Fin de la NAVBAR -->
+      <div id="overlay"></div>
+      <div id="root" class="modal"></div>
   
       </header>
     <!-- Fin du HEADER-->
@@ -161,6 +165,7 @@
     <!-- Fin du Footer -->
 
 <script src="/js/modal.js"></script>
+<script src="/js/recherche.js"></script>
     </body>
 
 </html>
