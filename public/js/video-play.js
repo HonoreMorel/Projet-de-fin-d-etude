@@ -15,8 +15,6 @@ function playPause() {
         }
 }
 
-//const sliders = ['Photo.png', 'Photo1.png', 'Photo2.png', 'Photo3.png'];
-
 let positionSlider = 0;
 
 let indicators  =document.querySelectorAll ('.desactive');
@@ -43,8 +41,6 @@ event.preventDefault();
   }
   videoSliders[positionSlider].classList.add('active');
   indicators[positionSlider].classList.add('active');
-
-  //videoSlider.src = "/images/" + sliders[positionSlider];
 }
 
 function previousSlide (event){
@@ -61,6 +57,4 @@ event.preventDefault();
   }
   videoSliders[positionSlider].classList.add('active');
   indicators[positionSlider].classList.add('active');
-
-  //videoSlider.src = "/images/" + sliders[positionSlider];
 }

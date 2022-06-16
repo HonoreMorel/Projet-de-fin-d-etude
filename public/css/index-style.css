@@ -68,6 +68,7 @@ h1, h2, header-text{
 }
 
 /* Modal Vidéo */
+
 .icone-modal{
     position: absolute;
     left: 500px; bottom: 232px;
@@ -80,24 +81,26 @@ h1, h2, header-text{
 }
 
 .modal-dialog {
-    max-width: 1080px;
-    margin: auto;
+
+    max-width: 1200px;
+    margin-top: 150px;
+
 }
 
-.modal-body {
-  position:relative;
-  padding:0px;
+    .modal-body {
+    position:relative;
+    padding:0;
 }
 
 .close {
-  position:absolute;
-  right:-30px;
-  top:0;
-  z-index:1;
-  font-size:2rem;
-  font-weight: normal;
-  color:#fff;
-  opacity:1;
+    position:absolute;
+    right:-30px;
+    top:0;
+    z-index:1;
+    font-size:2rem;
+    font-weight: normal;
+    color:#fff;
+    opacity:1;
 }
 
 /*** Section les-informations-du-jour ***/
@@ -111,10 +114,18 @@ h1, h2, header-text{
 }
 
 #scroll-horizontal{
-    overflow-x: scroll;
-    overflow-wrap: none;
+    
+    overflow-x: hidden; 
+    /* overflow-wrap: none; */
 }
 
 #card-scroll{
     margin: 24px;
+    min-width: 33%;
 }
+
+/*** DEBUT MODAL VIDEO*/
+
+
+
+/*** FIN MODAL VIDEO*/
