@@ -10,7 +10,8 @@
 
 <div class="example-wrapper">
     {% for subject in subjects %}
-        <a href="{{path('app_questions', {'id':subject.id})}}">{{subject.subject}}</a>
+        <a href="{{path('app_quizz_template', {'id':subject.id})}}">{{subject.subject}}</a>
     {% endfor %}
 </div>
+
 {% endblock %}
