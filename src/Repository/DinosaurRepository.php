@@ -42,17 +42,19 @@ class DinosaurRepository extends ServiceEntityRepository
 //    /**
 //     * @return Dinosaur[] Returns an array of Dinosaur objects
 //     */
-   public function findDinosaureByLike($value): array
-   {
-       return $this->createQueryBuilder('d')
-           ->andWhere('d.name LIKE :val')
-           ->setParameter('val', $value) //% ici
-           ->orderBy('d.name', 'ASC')
-           
-           ->getQuery()
-           ->getResult()
-       ;
-   }
+public function dinosaurfindByLike($value): array
+{
+    return $this->createQueryBuilder('d')
+        ->select('d.common_name', 'i.url')
+        ->innerJoin('d.images', 'i')
+        ->andWhere('d.common_name LIKE :val')
+        ->andWhere('i.main_image = true ')
+        ->setParameter('val', "%$value%")
+        ->orderBy('d.common_name', 'ASC')
+        ->getQuery()
+        ->getResult()
+    ;
+}
 
 //    public function findOneBySomeField($value): ?Dinosaur
 //    {
