@@ -51,6 +51,11 @@ a:hover{
    border-radius: 2rem;
 }
 
+.background{
+   background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+   background-size: cover;
+   /* width: 20%; */
+}
 .background-trexquiz{
     background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
     background-size: cover;

@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('css/style-base.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-component.css')}}">
+<link rel="stylesheet" href="{{asset('css/fiche-style.css')}}">
+    
+{% endblock %}
 {% block title %}Hello EspeceController!{% endblock %}
 
 {% block body %}
