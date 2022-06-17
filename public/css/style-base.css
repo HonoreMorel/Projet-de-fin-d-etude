@@ -1,3 +1,5 @@
+
+
 /***** Import des Polices ****/
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
@@ -216,10 +218,7 @@ footer a:hover {
 
 }
 
-header{
-  margin-bottom: 120px;
-}
-.modal.active {
+.modals.active {
   transform: translate(-50%, -50%) scale(1.5);
 }
 
@@ -387,3 +386,5 @@ input{
   display: inline-block;
 
 }
+
+    

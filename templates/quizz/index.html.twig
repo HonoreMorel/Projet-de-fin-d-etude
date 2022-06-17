@@ -1,17 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello QuizzController!{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/style-base.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style-component.css')}}">
+    <link rel="stylesheet" href="{{asset('css/multimedia-jeux.css')}}">
+    
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main id="multimedia-jeux">
+    <section class="container-fluid">
+    
+        <h2 id="padding-top-espacement-nav" >Je<span class="dino-poussin">u</span>x et Q<span class="dino-poussin">u</span>izz</h2>
+        
+        <div class="filtre marge">
+            <button id="btn_all" type="button" class="button-gradient-little"><value class="button-text">Tous</value></button>
+            <button id="btn_game" type="button" class="button-white-little"><value class="button-text">Jeux</value></button>
+            <button id="btn_quizz" type="button" class="button-white-little"><value class="button-text">Quizz</value></button>
+        </div>
+        
+        <div id="remove" class="marge" >
+            <div class="row">
 
-<div class="example-wrapper">
-    {% for subject in subjects %}
-        <a href="{{path('app_quizz_template', {'id':subject.id})}}">{{subject.subject}}</a>
-    {% endfor %}
-</div>
+                {% for subject in subjects %}
+                <div class="col-4 marge-haut quizz">
+                    <div class="card card-small background">
+                    <a href="{{ path('app_quizz_template', {'id':subject.id}) }}"> 
+                    <img class="card-img-top card-img-top-small  image" src="img/{{subject.image}}" alt="Card image cap">
+                    </a>
+                    <div class="card-body card-body-small">
+                    
+                        <p class="card-text titre-card"> <a href="{{ path('app_quizz_template', {'id':subject.id}) }}">{{subject.subject}}</a></p>
+                        
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
 
+            </div>
+        
+        </div>
+        <div class="container-fluid marge padding-top-espacement-nav" id="class" >
+            <div class="row ">
+                {% for game in games %}
+                <div class="col-4 marge-haut game">
+                    <div class="card card-small background">
+                    <a href="#">
+                    <img class="card-img-top card-img-top-small image" src="images/{{game.image}}" alt="Card image cap">
+                    </a>
+                    <div class="card-body card-body-small">
+                    
+                        <p class="card-text titre-card"> <a href="#"></a>{{game.name}}</p>
+                        
+                    </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+    {% block javascript %}
+        <script src="{{asset('js/multimedia_jeux.js')}}"></script>
+    {% endblock %}
 {% endblock %}

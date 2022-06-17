@@ -1,4 +1,5 @@
-let gameSection=document.getElementById('game');
+let gameSection=document.getElementById('dino-quiz');
+
 let timer=document.getElementById('timer');
 let resultatBtn;
 let save;
@@ -29,16 +30,18 @@ fetch(`http://127.0.0.1:8000/questions/${subject}`)
 
 //function to check if the answer is right or wrong
 function checkingAnswer(e){
+    
     clearInterval(cronometre);
     let element=e.currentTarget;
     
     let state=e.currentTarget.getAttribute('data-answer');
     let item=e.currentTarget.getAttribute('data-item');
-    
-    let explication=document.getElementById('explication');
+    console.log(state);
+    console.log(item);
+    //let explication=document.getElementById('explication');
     if(state=='true'){
         element.classList.add("correct");
-        explication.textContent=gameInformation[item].explication;
+        //explication.textContent=gameInformation[item].explication;
         score+=10;
         scoreperQuestion.textContent =`Score : ${score} points`;
         nextBtn.disabled=false;
@@ -46,7 +49,7 @@ function checkingAnswer(e){
         
     }else {
         element.classList.add("incorrect");
-        explication.textContent=gameInformation[item].explication;
+        //explication.textContent=gameInformation[item].explication;
         nextBtn.disabled=false;
         allTheAnswers.forEach(answer=>{
             answer.style.pointerEvents="none";
@@ -91,26 +94,67 @@ function showQuestion(item){
     const shuffledArray = gameInformation[item].answers.sort(() => 0.5 - Math.random());
     
     gameSection.innerHTML="";
-    gameSection.innerHTML +=`<div>
-    <h2>${gameInformation[item].statement}</h2>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[0].state}">${shuffledArray[0].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[1].state}">${shuffledArray[1].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[2].state}">${shuffledArray[2].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[3].state}">${shuffledArray[3].answer}</p>
-    <p id="explication"></p>
-    <button id="next">Suivant</button>
-    <button id="resultat">Résultat</button>
+    gameSection.innerHTML +=`<div class="container">
+    <div class="row"> <!-- conteneur flex -->
+      <div class="col-2"> <!-- item -->
+        <a href=""> <img src="" alt=""></a>
+      </div>
 
-    </div>`;
-    allTheAnswers=document.querySelectorAll('.answer');
+      <div class="col-8 text-center align-item-evenly">
+        <div class="card" id="question">
+          <div class="card-body d-flex flex-column">
+            <h3> Question 1</h3>
+            <P>${gameInformation[item].statement} ?</P>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="col-2 text-right">
+        <a href=""> <img src="icones/Vector.png" alt=""></a>
+      </div>
+    </div>
     
+    <div class="row espace">
+
+      <div class="col-2"> </div>
+
+      <div class="col-4 text-right">
+        <h3 class="answer" data-item =${item} data-answer="${shuffledArray[0].state}"> <span class="badge bg-secondary " id="reponse-1" >${shuffledArray[0].answer}</span></h3>
+        <h3 class="answer" data-item =${item} data-answer="${shuffledArray[1].state}"> <span class="badge bg-secondary answer" id="reponse-2" >${shuffledArray[1].answer}</span></h3>
+
+      </div>
+
+      <div class="col-4">
+        <h3 class="answer" data-item =${item} data-answer="${shuffledArray[2].state}""> <span class="badge bg-secondary answer" id="reponse-3" >${shuffledArray[2].answer}</span></h3>
+        <h3 class="answer" data-item =${item} data-answer="${shuffledArray[3].state}""> <span class="badge bg-secondary answer" id="reponse-4" >${shuffledArray[3].answer}</span></h3>
+      </div>
+
+
+      <div class="col-2"> </div>
+    </div>
+
+    <div class="row espace">
+      <div class="col-4"></div>
+      <div class="col-4 text-center">
+        <h3 id="next"> <span class="badge bg-primary" id="bouton-jeux-suviant">Suivant</span></h3>
+      </div>
+      <div class="col-4"></div>
+    </div>
+
+    <div class="row">
+    </div>
+  </div>`;
+    allTheAnswers=document.querySelectorAll('.answer');
+    console.log(allTheAnswers);
     allTheAnswers.forEach(answer=>{
         answer.addEventListener('click',checkingAnswer);
     })
 
-    resultatBtn=document.getElementById('resultat');
-    resultatBtn.addEventListener('click',showResultat);
+    //resultatBtn=document.getElementById('resultat');
+    //resultatBtn.addEventListener('click',showResultat);
     nextBtn=document.getElementById('next');
+   
     nextBtn.addEventListener('click',next);
     nextBtn.disabled=true;
    
@@ -138,7 +182,7 @@ function showTheRightAnswer(){
             answer.classList.add('correct')
         }
     })
-    explication.textContent=gameInformation[item].explication;
+    //explication.textContent=gameInformation[item].explication;
     nextBtn.disabled=false;
 
 }
@@ -154,7 +198,7 @@ function cronoTimer(){
         <h2>Merci pour votre participacion</h2>
         <p>Votre score est de ${rightResponse}/10</p>
         <p>Soit ${score} points</p>
-        <button id="save">Sauvergarder</button>
+        <button id="save" type="button "data-toggle="modal" data-target="#exampleModal">Sauvergarder</button>
 
     </div>`;
     
@@ -179,6 +223,9 @@ function cronoTimer(){
  //function to save the score in the DB
 
  function saveScore(){
+   
+    
+    
     let getInfoLocalStorage=JSON.parse(localStorage.getItem('quizzInformation'));
     console.log(getInfoLocalStorage);
     console.log(getInfoLocalStorage.subject_id);
@@ -189,6 +236,9 @@ function cronoTimer(){
         return response.text();
     })
     .then(function(resultat){
+        console.log(resultat);
+        if(resultat=='')
+
         console.log(resultat);
     })
  }
