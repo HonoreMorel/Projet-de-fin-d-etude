@@ -1,0 +1,71 @@
+section.multimedia-main-section{
+   background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png);
+  /*  background-color: red; */
+
+}
+
+a{
+   color: white;
+   text-decoration: none;
+   background-color: transparent;
+}
+
+a:hover{
+   color: var(--dino-pomme);
+   text-decoration: none;
+}
+
+.marge-haut{
+  margin-top: 50px;
+}
+
+.marge-bas{
+   margin-top: 60px;
+  /*  margin-left: 42px; */
+   
+}
+.marge{
+   /* margin-top: 50px;
+   margin-bottom: 50px;
+   margin-left: 0px; */
+   /* margin-top: 50px; */
+   padding: 50px;
+}
+
+.background-video{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/multimedia-video.jpg);
+    background-size: cover;
+    /* width: 20%; */
+}
+
+.background-podcast{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/multimedia-podcast.jpg);
+     background-size: cover;
+  /*   width: 20%; */
+}
+
+.background-jeux{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/multimedia-jeux.jpg);
+     background-size: cover;
+/*     width: 20%; */
+}
+
+.background-map{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/multimedia-map.jpg);
+    background-size: cover;
+}
+
+.image{
+   width: 100%;
+   object-fit: contain;
+   object-position: bottom center;
+   padding-top: 100px;
+}
+.card-small{
+   width: auto;
+}
+.card-large{
+   margin-left: auto;
+   margin-right: auto;
+   /* margin-bottom: 50px; */
+}

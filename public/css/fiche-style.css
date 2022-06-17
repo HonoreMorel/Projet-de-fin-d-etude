@@ -7,6 +7,19 @@ button-text{
     color: var(--dino-cendre);
 }
 
+#informations-supplementaires-haut h2{
+  text-shadow: var(--dino-cendre) 0 4px 4px;
+}
+
+#ses-contemporains-haut h2{
+  text-shadow: var(--dino-cendre) 0 4px 4px;
+}
+
+#contenu-associe h3{
+  text-shadow: var(--dino-cendre) 0 4px 4px;
+}
+
+
 /*** Article fiche-technique ***/
 
 /** Background **/
@@ -19,22 +32,59 @@ button-text{
 
 /** Fiche **/
 
+/* Margin et padding */
+#fiche-haut{
+  padding-top: 40px; /* Règle la taille du haut de la section */
+  margin-bottom: 40px; /* Règle l'espacement avec la fiche technique' */
+}
+
+
+#fiche-haut .button-text{ /* Règle l'espacement boutons/texte */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#fiche-haut .titre-card{ /* Règle l'espacement des titres */
+  margin-right: 20px;
+}
+
+#fiche-haut .nom-scientifique{ /* Règle l'espacement des titres */
+  margin-left: 20px;
+}
+
 /* Texte */
-.card-body-fiche p{
+.card-body-fiche p, .button-text{
     color: var(--dino-cendre);
 }
 
-nom-scientifique{
+.card-body-fiche .button-text{
+  font-size: 20px;
+}
+
+#fiche-haut .card-title{ /* Règle le haut et le bas de la card */
+  margin-top: 0px; 
+  margin-bottom: 0px;
+}
+
+.nom-scientifique{
     color: var(--dino-neige);
 }
 
-info-scientifique{
+.info-scientifique{
     color: var(--dino-neige);
     font-size: 5rem;
 }
 
-info-scientifique span{
+.info-scientifique span{
     font-size: 16rem;
+}
+
+.titre-scientifique{
+  color: var(--dino-neige);
+}
+
+.date-frise{
+  font-size: 5rem;
 }
 
 
@@ -42,7 +92,34 @@ info-scientifique span{
     color: var(--dino-neige);
 }
 
-/* Barre progression */
+
+#informations-supplementaires h2, p{
+  color: var(--dino-neige);
+}
+
+#ses-contemporains h2{
+  color: var(--dino-neige);
+  text-shadow: 0px 4px 4px rgba(14, 14, 14, 0.25);
+}
+
+/* Frise */
+.date-frise{
+  position: absolute;
+  right: 750px; top: 100px;
+}
+
+/** Barre progression **/
+
+#nav-fiche{ /* Gère la fixation de la barre */
+ position: sticky;
+ top: 117px;
+ z-index: 999;
+}
+
+#nav-fiche .container{ /* Gère la taille de la barre */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 /* The progress container (grey background) */
 .progress-container {
@@ -60,44 +137,130 @@ info-scientifique span{
 
 
 /*** Section informations-supplementaire **/
+
+/** Background **/
 #informations-supplementaires{
-    background: linear-gradient(rgba(250, 250, 25, 0.5), rgba(81, 255, 81, 0.5)), url(../images/fond-info-sup.png);
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.picto-dino-livre{
+/** Margin et padding **/
+#informations-supplementaires-haut{
+  padding-top: 80px; /* Règle la taille du haut de la section */
+  margin-bottom: 150px; /* Gère l'espacement avec l'article' */
+}
+
+.picto-dino-livre-right{
     position: relative;
-    bottom: 410px; left: 900px;
+    bottom: 520px; left: 1025px;
+}
+
+.picto-dino-livre-left{
+  position: relative;
+  bottom: 520px; left: -10px;
 }
 
 /*** Section dashboard-fiche ***/
+
+/** Texte **/
 #dashboard-fiche{
     background: var(--dino-cendre);
 }
 
-.ellipse-texte{
-    position: relative;
-    bottom: 0px; right: 375px;
+#dashboard-fiche #regime .info-scientifique{
+  color: var(--dino-pomme);
 }
 
+#dashboard-fiche #poids .info-scientifique{
+  color: var(--dino-poussin);
+}
+
+.ellipse-texte{
+    position: absolute;
+    bottom: 165px; right: 65px;
+    width: 400px;
+}
+
+/** Margin et Padding **/
+#dashboard-haut{
+  padding-top: 80px; /* Règle la taille du haut de la section */
+  margin-bottom: 40px; /* Gère l'espacement avec les éléments */
+}
+
+#dashboard-bas{
+  padding-bottom: 80px; /* Règle la taille du bas de la section */
+}
 
 /*** Section ses-contemporains **/
+
+/** Background **/
 #ses-contemporains{
-    background: linear-gradient(rgba(81, 255, 81, 0.5), rgba(81, 255, 81, 0.2)), url(../images/fond-contemporains.png);
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-contemporains.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+/** Margin et padding **/
+#ses-contemporains-haut{
+  padding-top: 80px; /* Règle la taille du haut de la section */
+  margin-bottom: 20px; /* Gère l'espacement avec les éléments */
+}
+
+#ses-contemporains-bas{
+  padding-bottom: 80px; /* Règle la taille du bas de la section */
+}
+
+/** Scroll **/
+#scroll-horizontal{
+  overflow-x: scroll;
+  overflow-wrap: none;
+}
+
+#card-scroll{
+  margin: 24px;
+}
+
 /*** Section contenu-associe ***/
+
+/** Background **/
 #contenu-associe{
     background: var(--dino-cendre);
 }
 
+/** Texte **/
 #contenu-associe h2, h3, p{
     color: var(--dino-neige);
+}
+
+/** Margin et Padding **/
+#contenu-associe-haut{
+  padding-top: 80px; /* Règle la taille du bas de la section */
+}
+
+video{
+  margin-bottom: 40px; /* Gère l'espacement avec les éléments */
+}
+
+#carousel{
+  margin-bottom: 20px; /* Gère l'espacement avec les éléments */
+}
+
+#carrousel-prev, #carrousel-next { /* Gère l'espacement entre les boutons */
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#contenu-associe-bas{
+  padding-bottom: 80px; /* Règle la taille du bas de la section */
+}
+
+/** Video **/
+video{
+  width: 1080px;
+  border-radius: 25px;
 }
 
 /** Caroussel **/
@@ -114,6 +277,7 @@ info-scientifique span{
   #carousel div img {
     width: 400px;
     transition: width 1s;
+    border-radius: 62px;
   }
   #carousel div.hideLeft {
     left: 0%;
@@ -171,15 +335,58 @@ info-scientifique span{
     width: 200px;
   }
   
+  .carousel-control-prev-icon{
+    background-image: url("../images/fleche-gauche.png") !important;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-next-icon{
+    background-image: url("../images/fleche-droite.png") !important;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 40px;
+}
+
 
 /*** Section podcast ***/
+
+/** Background **/
 #podcast{
-    background: linear-gradient(rgba(250, 250, 25, 0.2), rgba(81, 255, 81, 0.2)), url(../images/fond-contemporains.png);
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-contemporains.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+/** Texte **/
 #podcast h2, h3, p{
     color: var(--dino-neige);
+}
+
+#podcast-haut h3{
+  text-shadow: 0px 4px 4px rgba(14, 14, 14, 0.25);
+}
+
+/** Margin et Padding **/
+#podcast-haut{
+  padding-top: 80px; /* Règle la taille du haut de la section */
+}
+
+#lecteur-audio{
+  margin-bottom: 40px; /* Gère l'espacement avec les éléments */
+}
+
+#podcast-bas{
+  padding-bottom: 80px; /* Règle la taille du bas de la section */
+}
+
+/** Dino Relative **/
+.picto-dino-disco{
+  position: relative;
+  top: 86px; left: 200px;
+  z-index: 2;
 }

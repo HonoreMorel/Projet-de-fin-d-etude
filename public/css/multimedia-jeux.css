@@ -1,0 +1,132 @@
+section.multimedia-jeux-main-section{
+   background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+  /*  background-color: red; */
+
+}
+
+a{
+   color: white;
+   text-decoration: none;
+   background-color: transparent;
+}
+
+a:hover{
+   color: var(--dino-pomme);
+   text-decoration: none;
+}
+
+#multimedia-jeux h2{
+   text-shadow: var(--dino-cendre) 0 4px 4px;
+}
+
+.marge-haut{
+  margin-top: 50px;
+}
+.marge-bas{
+   margin-top: 60px;
+  /*  margin-left: 42px; */
+   
+}
+.marge{
+   /* margin-top: 50px;
+   margin-bottom: 50px;
+   margin-left: 0px; */
+   /* margin-top: 50px; */
+   margin: 0px;
+   padding: 50px;
+}
+
+.filtre button{
+   margin-right: 80px;
+   padding-left: 80px;
+   padding-right: 160px;
+   
+}
+.button-gradient-little{
+   border-radius: 2rem;
+}
+.button-white-little{
+   border-radius: 2rem;
+}
+
+.background-trexquiz{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+    background-size: cover;
+    /* width: 20%; */
+}
+.background-diploquiz{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+  /*   width: 20%; */
+}
+.background-iguaquiz{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+/*     width: 20%; */
+}
+.background-quizextinction{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+}
+.background-quizdino{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+    background-size: cover;
+    /* width: 20%; */
+}
+.background-puzzle{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+/*     width: 20%; */
+}
+.background-memorie{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+  /*   width: 20%; */
+}
+.background-erreur{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+/*     width: 20%; */
+}
+.background-dinofleche{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+}
+.background-sautedino{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+    background-size: cover;
+    /* width: 20%; */
+}
+.background-sudodino{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-noir.jpg);
+     background-size: cover;
+  /*   width: 20%; */
+}
+
+
+.image{
+   width: 100%;
+   object-fit: contain;
+   object-position: center;
+   padding: 50px;
+}
+.card-small{
+   width: auto;
+}
+.card-large{
+   margin-left: auto;
+   margin-right: auto;
+   /* margin-bottom: 50px; */
+}
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+h2{
+   color: var(--dino-neige);
+   margin-top: 50px;
+   margin-left: 50px;
+}
