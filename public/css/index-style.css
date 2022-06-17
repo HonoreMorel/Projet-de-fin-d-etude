@@ -2,6 +2,10 @@
 
 /** Règles Générales **/
 
+main{
+    padding-top: 100px;
+}
+
 /** Texte **/
 
 h1, h2, header-text{

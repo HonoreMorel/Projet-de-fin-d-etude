@@ -5,38 +5,89 @@
 {% block body %}
     <h1>User</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Nickname</th>
-                <td>{{ user.nickname }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                <td>{{ user.photo }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <p class="text-center mb-5"><img class="w-25 rounded-pill" src="/img/{{user.photo}}"/></p>
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+        <h2 class="text-center mb-5 text-body">{{ user.nickname }}</h2>
+
+
+        <section class="border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
+            <h3 class="pb-4">Mes Trophées</h3>
+                <article class="d-flex justify-content-around pb-2 ">
+                    <div class="flex-column">
+                        <img class="pb-5 w-50" src="/img/bronze.png" alt="bronze">
+                        <h4>Bronze</h4>                       
+                    </div>
+                    <div class="flex-column">
+                        <img class="pb-5 w-50" src="/img/argent.png" alt="argent">
+                        <h4>Argent</h4> 
+                    </div>
+                    <div class="flex-column">
+                        <img class="pb-5 w-50" src="/img/or.png" alt="or">
+                        <h4>Or</h4> 
+                    </div>
+                    <div class="flex-column">
+                        <img class="pb-5 w-50" src="/img/platine.png" alt="platine">
+                        <h4>Platine</h4> 
+                    </div>
+                </article>
+        </section>
+
+        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
+            <article class="col-sm-4">
+                <div class="flex-column">
+                    <h3 class="pb-4">Mes Scores</h3>
+                    <p>blabla</p>                       
+                </div>
+            </article>
+            <article class="col-sm-8">
+                <div class="flex-column">
+                    <h3 class="pb-4">Historique de jeux</h3>
+                    <p>blabla</p>
+                </div>
+            </article>
+        </section>
+
+        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
+            <article class="col-sm-8">
+                <div class="flex-column">
+                    <h3 class="pb-4">Archives des Dinosaures</h3>
+                    <p>blabla</p>                       
+                </div>
+            </article>
+            <article class="col-sm-4">
+                <div class="flex-column">
+                    <h3 class="pb-4">Potcast Favoris</h3>
+                    <p>blabla</p>
+                </div>
+            </article>
+        </section>
+
+        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
+            <article class="col-sm-5">
+                <div class="flex-column">
+                    <h3 class="pb-4">Mon Dinosaure</h3>
+                    <p>blabla</p>                       
+                </div>
+            </article>
+            <article class="col-sm-7">
+                <div class="flex-column">
+                    <h3 class="pb-4">Mes vidéos / Films</h3>
+                    <p>blabla</p>
+                </div>
+            </article>
+        </section>
+
+        <div class="text-center ">
+            <button class="btn-lg border text-center pb-5 pt-5 rounded-pill bg-success text-white mb-5" type="button" >Quel Dinosaure est-tu ? 🦖</button>
+        </div>
+
+
+    </div>
+
+
+
 
     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
 
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

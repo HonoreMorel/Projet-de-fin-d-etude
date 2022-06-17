@@ -24,6 +24,9 @@ class Subject
     #[ORM\OneToMany(mappedBy: 'subject', targetEntity: Score::class)]
     private $scores;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $image;
+
     public function __construct()
     {
         $this->questions = new ArrayCollection();
@@ -110,5 +113,17 @@ class Subject
     public function __toString(): string
     {   
         return $this->subject;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 }

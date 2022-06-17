@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -26,6 +27,7 @@ class SubjectCrudController extends AbstractCrudController
         return [
             FormField::addTab('Sujet'),
             TextField::new("subject", "Sujet"),
+            ImageField::new('image')->setUploadDir('public/img/')->setBasePath('/img/'),
             FormField::addTab('Questions'),
             CollectionField::new('questions')->useEntryCrudForm(QuestionCrudController::class)->setColumns('col-lg-12'),
         ];
