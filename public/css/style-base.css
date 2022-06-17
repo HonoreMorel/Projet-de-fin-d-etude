@@ -14,6 +14,7 @@ html{
     font-size: 62.5% !important; /* 1 rem = 10px */
 }
 
+
 /** Gérer espace avec barre de navigation fixé **/
 #padding-top-espacement-nav{
     padding-top: 1px;
@@ -181,7 +182,7 @@ footer a:hover {
     margin-bottom: 2rem;
 }
 
-/**********************CSS MODAL********************************/
+/**********************CSS MODALS********************************/
 
 .sign-up{
     background: url('..//images/compte.png');
@@ -196,7 +197,7 @@ footer a:hover {
   box-sizing: border-box;
 }
 
-.modal {
+.modals{
   display:block;
   height: 500px;
   position: absolute;
@@ -222,7 +223,7 @@ header{
   transform: translate(-50%, -50%) scale(1.5);
 }
 
-.modal-header {
+.modals-header {
   padding: 0.625rem auto;
   display: flex;
   justify-content: space-between;
@@ -231,7 +232,7 @@ header{
   
 }
 
-.modal-header .title {
+.modals-header .title {
   font-size: 2.5rem;
   font-weight: bold;
   padding-left: 30%;
@@ -251,7 +252,7 @@ button.close-button {
   color:black;
 }
 
-.modal-body {
+.modals-body {
   width: 26.25rem;
   padding-top:1rem;
   padding-bottom:2rem;
@@ -281,6 +282,7 @@ form{
   bottom: 0;
   background-color: rgba(0, 0, 0, .5);
   pointer-events: none;
+  z-index: 10;
 }
 
 #overlay.active {

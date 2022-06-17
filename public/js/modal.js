@@ -2,15 +2,16 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
+
 openModalButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
+    const modals = document.querySelector(button.dataset.modalTarget)
+    openModal(modals)
   })
 })
 
 overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
+  const modals = document.querySelectorAll('.modals.active')
   modals.forEach(modal => {
     closeModal(modal)
   })
@@ -18,8 +19,8 @@ overlay.addEventListener('click', () => {
 
 closeModalButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
+    const modals = button.closest('.modals')
+    closeModal(modals)
   })
 })
 
@@ -34,3 +35,5 @@ function closeModal(modal) {
   modal.classList.remove('active')
   overlay.classList.remove('active')
 }
+
+
