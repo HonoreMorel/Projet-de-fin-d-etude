@@ -26,10 +26,11 @@ class EspeceController extends AbstractController
 
         $periode= $oneDinosaur->getPeriod();
         $allDinosaurs=$dinosaurRepository->findAll(["period"=>$periode]);
-        
+         
        
         return $this->render('espece/espece.html.twig', [
-            'oneDinosaur' => $oneDinosaur
+            'oneDinosaur' => $oneDinosaur,
+            'contemporains'=>$allDinosaurs
         ]);
     }
 }

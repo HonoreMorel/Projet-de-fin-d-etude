@@ -30,7 +30,7 @@
           <div class="col-8 d-flex justify-content-center">
             <div class="card card-titre">
               <div class="card-body card-body-titre d-inline-flex justify-content-center">
-                <p class="card-title titre-card">{{oneDinosaur.scientific_name | camel}}</p><p class="card-title nom-scientifique"></p>
+                <p class="card-title titre-card">{{oneDinosaur.scientificName}}</p><p class="card-title nom-scientifique">{{oneDinosaur.commonName}}</p>
               
 
               </div>
@@ -51,7 +51,7 @@
       <div class="row">
         <div class="col-8 d-flex justify-content-center">
           <div class="card card-illu">
-            <img class="card-img-top card-img-top-illu" src="{{asset('images/illustration-dino.png')}}" alt="Card image cap">
+            <img class="card-img-top card-img-top-illu" src="/img/{{oneDinosaur.imgHeight}}" alt="Card image cap">
           </div>
         </div>
 
@@ -151,15 +151,16 @@
               </div>
             </div>
 
+          {% for information in oneDinosaur.moreInformation %}
             <!-- Articles Informations Supplementaires -->
 
-            {% for information in oneDinosaur.moreInformation %}
+              
             
               <div class="row">
             <div class="col-5 ">
               <div class="card card-photo">
               
-                <img class="card-img-top card-img-top-photo" src="{{asset('img/'information.image)}}" alt={{information.alt}}>
+                <img class="card-img-top card-img-top-photo" src="/img/{{information.image}}" alt={{information.alt}}>
               </div>
             </div>
             
@@ -199,7 +200,7 @@
           <div class="row" id="dashboard-bas">
             <div class="col-6 text-center">
               <img src="{{asset('images/dashboard-ellipse.png')}}" alt="">
-              <p class="ellipse-texte info-scientifique"><span class="dino-pomme">32</span><br>T-REX TROUVÉS</p>
+              <p class="ellipse-texte info-scientifique"><span class="dino-pomme">32</span><br>{{oneDinosaur.commonName}} TROUVÉS</p>
             </div>
 
             <div class="col-6">
@@ -235,43 +236,21 @@
         </div>
 
         <div class="container-fluid d-flex flex-row justify-content-start" id="scroll-horizontal">
+
+          {% for contemporain in contemporains %}
+            <div class="d-flex" id="ses-contemporains-bas">
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="/img/{{contemporain.imgHeight}}" alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">{{contemporain.commonName}}</p>
+                </div>
+              </div>
+           {% endfor  %}
           
-          <div class="d-flex" id="ses-contemporains-bas">
-              <div class="card card-small card-scroll">
-                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
-                <div class="card-body card-body-small">
-                 <p class="card-text">Some quick example text.</p>
-                </div>
-              </div>
+          
 
-              <div class="card card-small card-scroll">
-                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
-                <div class="card-body card-body-small">
-                 <p class="card-text">Some quick example text.</p>
-                </div>
-              </div>
-
-              <div class="card card-small card-scroll">
-                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
-                <div class="card-body card-body-small">
-                 <p class="card-text">Some quick example text.</p>
-                </div>
-              </div>
-
-              <div class="card card-small card-scroll">
-                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
-                <div class="card-body card-body-small">
-                 <p class="card-text">Some quick example text.</p>
-                </div>
-              </div>
-
-              <div class="card card-small card-scroll">
-                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}"alt="Card image cap">
-                <div class="card-body card-body-small">
-                 <p class="card-text">Some quick example text.</p>
-                </div>
-              </div>
-          </div>
+              
+          
         </div>
 
     
@@ -380,9 +359,9 @@
   
             <div class="row" id="podcast-bas">
               <div class="col d-flex justify-content-center">
-                <button type="button" class="button-gradient-large">
+                <a href="{{ path('app_quizz') }}" class="button-gradient-large">
                   <span class="button-text">Testez vos connaissances !</span>
-                </button>
+                </a>
               </div>
             </div>
         </section>
