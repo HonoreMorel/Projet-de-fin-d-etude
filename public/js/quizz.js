@@ -17,7 +17,7 @@ let Url= document.location.pathname;
 let subject=(Url.slice(Url.lastIndexOf("/")+1));
 
 //getting all the questions from PHP 
-fetch(`http://127.0.0.1:8000/questions/${subject}`)
+fetch(`/questions/${subject}`)
 .then (function(response){
     return response.json();
 })

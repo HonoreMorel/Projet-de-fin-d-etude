@@ -3,83 +3,107 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
 
     <div class="container">
-        <p class="text-center mb-5"><img class="w-25 rounded-pill" src="/img/{{user.photo}}"/></p>
+        <p class="text-center mt-5 mb-5 pt-5 "><img class="w-25 rounded-pill" src="/img/{{user.photo}}"/></p>
 
-        <h2 class="text-center mb-5 text-body">{{ user.nickname }}</h2>
+        <h2 class="text-center mb-5 text-body pb-3">{{ user.nickname }}</h2>
 
 
-        <section class="border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
+        <section class="border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5 border border-success">
             <h3 class="pb-4">Mes Trophées</h3>
-                <article class="d-flex justify-content-around pb-2 ">
-                    <div class="flex-column">
-                        <img class="pb-5 w-50" src="/img/bronze.png" alt="bronze">
-                        <h4>Bronze</h4>                       
-                    </div>
-                    <div class="flex-column">
-                        <img class="pb-5 w-50" src="/img/argent.png" alt="argent">
-                        <h4>Argent</h4> 
-                    </div>
-                    <div class="flex-column">
-                        <img class="pb-5 w-50" src="/img/or.png" alt="or">
-                        <h4>Or</h4> 
-                    </div>
-                    <div class="flex-column">
-                        <img class="pb-5 w-50" src="/img/platine.png" alt="platine">
-                        <h4>Platine</h4> 
-                    </div>
+                <article class="d-flex justify-content-around pb-2  ">
+                        
+                        <div class="flex-column">
+                            <img class="pb-5 w-50" src="/img/bronze.png" alt="bronze">
+                            <h4>Bronze</h4>                       
+                        </div>
+                            
+                        
+                        <div class="flex-column">
+                            <img class="pb-5 w-50" src="/img/argent.png" alt="argent">
+                            <h4>Argent</h4> 
+                        </div>
+                        <div class="flex-column">
+                            <img class="pb-5 w-50" src="/img/or.png" alt="or">
+                            <h4>Or</h4> 
+                        </div>
+                        <div class="flex-column">
+                            <img class="pb-5 w-50" src="/img/platine.png" alt="platine">
+                            <h4>Platine</h4> 
+                        </div>                        
+
                 </article>
         </section>
 
-        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
-            <article class="col-sm-4">
+        <section class=" d-flex row  text-center pb-5 pt-5 mb-5 justify-content-center">
+            <article class="col-sm-3 rounded-pill bg-dark text-white mr-5 border border-success">
                 <div class="flex-column">
-                    <h3 class="pb-4">Mes Scores</h3>
+                    <h4 class="pb-4 pt-4">Mes Scores</h4>
+
+                    
+                    {% for score in user.scores %}
+                    <p>
+                        {% if score.subject is null %}
+                            {{score.game.name}}
+                        {% endif %}
+                        {% if score.game is null %}
+                            {{score.subject.subject}}                           
+                        {% endif %}
+                            <br> {{score.score}}
+                    </p>                                             
+                    {% endfor %}
+
+                </div>
+            </article>
+            <article class="col-sm-7 rounded-pill bg-dark text-white ml-5 border border-success">
+                <div class="flex-column">
+                    <h4 class="pb-4 pt-4">Historique de jeux</h4>
+
+                    {% for score in user.scores %}
+                    <p>
+                        {% if score.game is not null %}
+                            <br> {{score.game.name}}                           
+                        {% endif %}
+                    </p>                                            
+                    {% endfor %}
+
+                </div>
+            </article>
+        </section>
+
+        <section class=" d-flex row text-center pb-5 pt-5 mb-5 justify-content-center">
+            <article class="col-sm-7 rounded-pill bg-dark text-white mr-5 border border-success">
+                <div class="flex-column">
+                    <h4 class="pb-4 pt-4">Archives des Dinosaures</h4>
                     <p>blabla</p>                       
                 </div>
             </article>
-            <article class="col-sm-8">
+            <article class="col-sm-3 rounded-pill bg-dark text-white ml-5 border border-success">
                 <div class="flex-column">
-                    <h3 class="pb-4">Historique de jeux</h3>
+                    <h4 class="pb-4 pt-4">Potcast Favoris</h4>
                     <p>blabla</p>
                 </div>
             </article>
         </section>
 
-        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
-            <article class="col-sm-8">
+        <section class=" d-flex row text-center pb-5 pt-5 mb-5 justify-content-center">
+            <article class="col-sm-4 rounded-pill bg-dark text-white mr-5 border border-success">
                 <div class="flex-column">
-                    <h3 class="pb-4">Archives des Dinosaures</h3>
+                    <h4 class="pb-4 pt-4">Mon Dinosaure</h4>
                     <p>blabla</p>                       
                 </div>
             </article>
-            <article class="col-sm-4">
+            <article class="col-sm-6 rounded-pill bg-dark text-white ml-5 border border-success">
                 <div class="flex-column">
-                    <h3 class="pb-4">Potcast Favoris</h3>
-                    <p>blabla</p>
-                </div>
-            </article>
-        </section>
-
-        <section class=" d-flex row border text-center pb-5 pt-5 rounded-pill bg-dark text-white mb-5">
-            <article class="col-sm-5">
-                <div class="flex-column">
-                    <h3 class="pb-4">Mon Dinosaure</h3>
-                    <p>blabla</p>                       
-                </div>
-            </article>
-            <article class="col-sm-7">
-                <div class="flex-column">
-                    <h3 class="pb-4">Mes vidéos / Films</h3>
+                    <h4 class="pb-4 pt-4">Mes vidéos / Films</h4>
                     <p>blabla</p>
                 </div>
             </article>
         </section>
 
         <div class="text-center ">
-            <button class="btn-lg border text-center pb-5 pt-5 rounded-pill bg-success text-white mb-5" type="button" >Quel Dinosaure est-tu ? 🦖</button>
+            <p><center><iframe  class="border text-center pb-5 pt-5 rounded-3 bg-warning text-dark mb-5" src= "https://www.quizz.biz/mon-quizz.php?id=1109833&design=|0519F9|505050|0000FF|000000|000000||Trebuchet_MS|14" height='360' width='500' frameborder=0 style='border:black 0px solid;' allowtransparency=true name=quizz1109833></iframe><br><font size=1>Test Tests de personnalité créé sur <a href=https://www.quizz.biz target=_blank>Quizz.biz</a></font><br><br></center></p>
         </div>
 
 
@@ -88,6 +112,6 @@
 
 
 
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+    <a href="{{ path('app_user_edit', {'id': user.id}) }}">Modifier</a>
 
 {% endblock %}
