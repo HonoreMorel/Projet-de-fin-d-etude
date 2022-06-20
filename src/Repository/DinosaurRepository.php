@@ -45,7 +45,7 @@ class DinosaurRepository extends ServiceEntityRepository
 public function dinosaurfindByLike($value): array
 {
     return $this->createQueryBuilder('d')
-        ->select('d.common_name', 'i.url')
+        ->select('d.common_name', 'i.url' ,'d.id')
         ->innerJoin('d.images', 'i')
         ->andWhere('d.common_name LIKE :val')
         ->andWhere('i.main_image = true ')

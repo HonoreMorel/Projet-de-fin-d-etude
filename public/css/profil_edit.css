@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+
+
+
+#profil .profil{
+    background-image: url('../img/profil-banniere.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#profil .archive{
+    background-image: url('../img/profil-archive.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#profil .potcast{
+    background-image: url('../img/profil-podcast.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#profil .dino{
+    background-image: url('../img/profil-mon-dinosaure.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#profil .video{
+    background-image: url('../img/profil-video.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#profil .modif a{
+    font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    max-width: 195px;
+    color: purple;
+}

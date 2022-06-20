@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block title %}Nouvel Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Create new User</h1>
 
-    {{ include('user/_form.html.twig') }}
+    <div class="container">
+        <h2 class="text-center pb-5 text-dark pt-5">Nouvel Utilisateur</h2>
+    
+        <p class="">
+            {{ include('user/_form.html.twig') }}         
+        </p>
+    </div>
 
 {% endblock %}
