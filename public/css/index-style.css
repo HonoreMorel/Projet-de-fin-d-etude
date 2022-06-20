@@ -162,6 +162,7 @@ h1, h2, header-text{
 #scroll-horizontal{
     
     overflow-x: hidden; 
+    scroll-behavior: smooth;
     /* overflow-wrap: none; */
 }
 
