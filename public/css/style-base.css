@@ -1,5 +1,4 @@
 
-
 /***** Import des Polices ****/
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
@@ -47,24 +46,43 @@ p, a, blockquote{
 }
 
 
-button-text{
+.button-text{
     font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
+button-text{
+  font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  max-width:195px;
+}
 
-header-text{
+
+.header-text{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
+header-text{
+  font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
 
-titre-card{
+
+.titre-card{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
+}
+
+titre-card{
+  font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 
@@ -386,5 +404,3 @@ input{
   display: inline-block;
 
 }
-
-    

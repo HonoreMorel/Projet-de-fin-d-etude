@@ -23,7 +23,7 @@ class QuizzController extends AbstractController
     {
         $listGame= $gameRepository->findAll();
         $listSubjects = $subjectRepository->findAll();
-
+        
         return $this->render('quizz/index.html.twig', [
             'subjects' => $listSubjects,
             'games'    =>$listGame
