@@ -4,18 +4,20 @@
 
 {% block stylesheets %}
 {{ parent() }}
-<link rel="stylesheet" href="{{asset('css/quizz.css')}}">
+
 <link rel="stylesheet" href="{{asset('css/style-base.css')}}">
 <link rel="stylesheet" href="{{asset('css/style-component.css')}}">
 <link rel="stylesheet" href="{{asset('css/multimedia-jeux.css')}}">
-    
+<link rel="stylesheet" href="{{asset('css/style-quiz-question.css')}}">
+<link rel="stylesheet" href="{{asset('css/quizz.css')}}">
+
 {% endblock %}
 
 
 {% block body %}
 <p id="score">Score: 0 points</p>
 <p id="timer">10</p>
-<div id="game" class="example-wrapper"></div>
+
 <main id="padding-top-espacement-nav">
     <article id="dino-quiz">
 
