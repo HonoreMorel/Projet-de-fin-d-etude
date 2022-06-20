@@ -1,4 +1,5 @@
-let gameSection=document.getElementById('game');
+let gameSection=document.getElementById('dino-quiz');
+let rSection;
 let timer=document.getElementById('timer');
 let resultatBtn;
 let save;
@@ -10,6 +11,9 @@ let item=0;
 let timerCount=10;
 let cronometre;
 let rightResponse=0;
+let answerSection;
+let answerStatement;
+
 let scoreperQuestion=document.getElementById('score');
 //getting subject id from URL to use FETCH
 let Url= document.location.pathname;
@@ -29,16 +33,23 @@ fetch(`http://127.0.0.1:8000/questions/${subject}`)
 
 //function to check if the answer is right or wrong
 function checkingAnswer(e){
+    
     clearInterval(cronometre);
     let element=e.currentTarget;
     
     let state=e.currentTarget.getAttribute('data-answer');
     let item=e.currentTarget.getAttribute('data-item');
+    console.log(state);
+    console.log(item);
+    //let explication=document.getElementById('explication');
     
-    let explication=document.getElementById('explication');
+
     if(state=='true'){
         element.classList.add("correct");
-        explication.textContent=gameInformation[item].explication;
+        allTheAnswers.forEach(answer=>{
+          answer.style.pointerEvents="none";
+        });
+        //explication.textContent=gameInformation[item].explication;
         score+=10;
         scoreperQuestion.textContent =`Score : ${score} points`;
         nextBtn.disabled=false;
@@ -46,7 +57,7 @@ function checkingAnswer(e){
         
     }else {
         element.classList.add("incorrect");
-        explication.textContent=gameInformation[item].explication;
+        //explication.textContent=gameInformation[item].explication;
         nextBtn.disabled=false;
         allTheAnswers.forEach(answer=>{
             answer.style.pointerEvents="none";
@@ -56,6 +67,10 @@ function checkingAnswer(e){
         })
     }
 
+    
+    answerSection.textContent=gameInformation[item].explication;
+    answerStatement.textContent="Réponse";
+    rSection.style.display="block";
     allTheAnswers.forEach(answer=>{
         answer.style.pointerEvents="none";
         
@@ -91,19 +106,102 @@ function showQuestion(item){
     const shuffledArray = gameInformation[item].answers.sort(() => 0.5 - Math.random());
     
     gameSection.innerHTML="";
-    gameSection.innerHTML +=`<div>
-    <h2>${gameInformation[item].statement}</h2>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[0].state}">${shuffledArray[0].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[1].state}">${shuffledArray[1].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[2].state}">${shuffledArray[2].answer}</p>
-    <p class="answer" data-item =${item} data-answer="${shuffledArray[3].state}">${shuffledArray[3].answer}</p>
-    <p id="explication"></p>
-    <button id="next">Suivant</button>
-    <button id="resultat">Résultat</button>
+    gameSection.innerHTML +=`
+      <div class="container" id="question-espacement-haut">
 
-    </div>`;
+        <div class="d-flex justify-content-center">
+          <img class="logo-quiz" src="assets/images/logo-quiz.png" alt="#">
+        </div>  
+
+        <div class="row"> <!-- conteneur flex -->
+          <div class="col-2"> <!-- item -->
+            <a href=""> <img src="assets/images/close.png" alt=""></a>
+          </div>
+
+          <div class="col-8">
+            <div class="card card-question">
+              <div class="card-body d-flex flex-column text-center">        
+                <h2><span class="titre-question">Question ${item + 1}</span></h2>
+                <P><span class="text-question">${gameInformation[item].statement}</span></P>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2 text-right">
+            <a href=""><img src="assets/images/timer.png" alt=""></a>
+          </div>
+        </div>
+
+        <div class="row espace">
+
+          <div class="col-4 offset-2 d-flex flex-column">
+
+            <button type="button" class="answer button-question-medium" data-item ="${item}" data-answer="${shuffledArray[0].state}">
+              <span class="text-question">${shuffledArray[0].answer}</span>
+            </button>
+            
+            <button type="button" class="answer button-question-medium" data-item ="${item}" data-answer="${shuffledArray[1].state}">
+              <span class="text-question">${shuffledArray[1].answer}</span>
+            </button>
+          </div>
+
+          <div class="col-4 d-flex flex-column">
+
+            <button type="button" class="answer button-question-medium" data-item ="${item}" data-answer="${shuffledArray[2].state}">
+              <span class="text-question">${shuffledArray[2].answer}</span>
+            </button>
+
+            <button type="button" class="answer button-question-medium" data-item ="${item}" data-answer="${shuffledArray[3].state}">
+              <span class="text-question">${shuffledArray[3].answer}</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="row espace">
+          <div class="col text-center">
+            <button id ="next" type="button" class="button-suivant-large">
+              <span class="text-question">Suivant</span>
+            </button>
+            
+
+            
+            
+          </div>
+          
+        </div>
+        <div class="row espace">
+          <div class="col text-center">
+            <button id ="resultat" type="button" class="button-suivant-large">
+              <span class="text-question">Sauvegarder</span>
+            </button>
+
+            
+            
+          </div>
+          
+        </div>
+
+      
+
+        <div class="row" id="question-espacement-bas">
+          <div class="col">
+            <div class="card card-reponse">
+              <div class="card-body d-flex flex-column text-center">        
+                <h2 class="titre-question text-explication"></h2>
+                <P class="text-question text-explaining"></P>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    `;
+
+    rSection=document.getElementById('question-espacement-bas');
+    rSection.style.display="none";
+    answerStatement=document.querySelector('.text-explication');
+    answerSection=document.querySelector('.text-explaining');
     allTheAnswers=document.querySelectorAll('.answer');
-    
+    console.log(allTheAnswers);
     allTheAnswers.forEach(answer=>{
         answer.addEventListener('click',checkingAnswer);
     })
@@ -111,6 +209,7 @@ function showQuestion(item){
     resultatBtn=document.getElementById('resultat');
     resultatBtn.addEventListener('click',showResultat);
     nextBtn=document.getElementById('next');
+   
     nextBtn.addEventListener('click',next);
     nextBtn.disabled=true;
    
@@ -124,7 +223,13 @@ function showSeconds(){
     timer.innerText=`${timerCount}`;
     if(timerCount==0){
         clearInterval(cronometre);
+        allTheAnswers.forEach(answer=>{
+          answer.style.pointerEvents="none";
+        })
         showTheRightAnswer();
+        
+        
+
 
     }
 
@@ -138,7 +243,12 @@ function showTheRightAnswer(){
             answer.classList.add('correct')
         }
     })
-    explication.textContent=gameInformation[item].explication;
+    rSection.style.display="block";
+    answerSection.textContent=gameInformation[item].explication;
+    answerStatement.textContent="Réponse";
+    
+   
+    //explication.textContent=gameInformation[item].explication;
     nextBtn.disabled=false;
 
 }
@@ -150,13 +260,21 @@ function cronoTimer(){
 //function to show the resultat
  function showResultat(){
     gameSection.innerHTML="";
-    gameSection.innerHTML +=`<div>
-        <h2>Merci pour votre participacion</h2>
-        <p>Votre score est de ${rightResponse}/10</p>
-        <p>Soit ${score} points</p>
-        <button id="save">Sauvergarder</button>
+    gameSection.innerHTML +=`
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Merci pour votre participacion</h5>
+              <p class="card-text">Votre score est de 10/${rightResponse}</p>
+              <p class="card-text">Soit ${score} points</p>
+              <button id="save" type="button" class="btn btn-primary">Sauvegarder</button>
 
-    </div>`;
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
     
     //get the save's button
     save=document.getElementById('save');
@@ -179,6 +297,9 @@ function cronoTimer(){
  //function to save the score in the DB
 
  function saveScore(){
+   
+    
+    
     let getInfoLocalStorage=JSON.parse(localStorage.getItem('quizzInformation'));
     console.log(getInfoLocalStorage);
     console.log(getInfoLocalStorage.subject_id);
@@ -189,6 +310,9 @@ function cronoTimer(){
         return response.text();
     })
     .then(function(resultat){
+        console.log(resultat);
+        if(resultat=='')
+
         console.log(resultat);
     })
  }

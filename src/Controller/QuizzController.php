@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Score;
 use App\Entity\Subject;
+use App\Repository\GameRepository;
 use App\Repository\ScoreRepository;
 use App\Repository\AnswerRepository;
 use App\Repository\SubjectRepository;
@@ -18,13 +19,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class QuizzController extends AbstractController
 {
     #[Route('/quizz', name: 'app_quizz')]
-    public function index(SubjectRepository $subjectRepository): Response
+    public function index(SubjectRepository $subjectRepository, GameRepository $gameRepository): Response
     {
-
+        $listGame= $gameRepository->findAll();
         $listSubjects = $subjectRepository->findAll();
-
+        
         return $this->render('quizz/index.html.twig', [
             'subjects' => $listSubjects,
+            'games'    =>$listGame
         ]);
     }
 

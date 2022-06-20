@@ -1,0 +1,12 @@
+header {
+    margin-bottom: 110px;
+}
+
+.padding-top-espacement-nav{
+    background: linear-gradient(var(--dino-poussin), var(--dino-pomme));
+}
+
+#question-espacement-bas{
+    display: none;
+}
+

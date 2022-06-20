@@ -1,0 +1,395 @@
+
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('css/style-base.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-component.css')}}">
+<link rel="stylesheet" href="{{asset('css/fiche-style.css')}}">
+    
+{% endblock %}
+
+{% block body %}
+
+<!-- Début du main-->
+<main id="fiche-espece" class="sectionprincipal">
+
+    <!-- Début Article-->
+    <article id="fiche-technique">
+
+      <!-- Boutons et Titres Fiches-->
+      <div class="container-fluid" id="padding-top-espacement-nav">
+        <div class="row" id="fiche-haut">
+          <div class="col-2 d-flex justify-content-start">
+            <button type="button" class="button-arrow-navigation">
+              <img src="{{asset('images/fleche-gauche.png')}}" alt="#">
+            </button>
+            <p class="button-text align-self-center">Précédent</p>
+          </div>
+
+          <div class="col-8 d-flex justify-content-center">
+            <div class="card card-titre">
+              <div class="card-body card-body-titre d-inline-flex justify-content-center">
+                <p class="card-title titre-card">{{oneDinosaur.scientific_name | camel}}</p><p class="card-title nom-scientifique"></p>
+              
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-2 d-flex justify-content-end">
+            <p class="button-text align-self-center">Suivant</p>
+            <button type="button" class="button-arrow-navigation">
+              <img src="{{asset('images/fleche-droite.png')}}" alt="#">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Début Fiche Technique -->
+      <!-- Illustration -->
+      <div class="row">
+        <div class="col-8 d-flex justify-content-center">
+          <div class="card card-illu">
+            <img class="card-img-top card-img-top-illu" src="{{asset('images/illustration-dino.png')}}" alt="Card image cap">
+          </div>
+        </div>
+
+        <!-- Fiche -->
+        <div class="col-3 d-flex justify-content-center" id="fiche-contenu">
+            <div class="card card-fiche">
+              <div class="card-body card-body-fiche">
+               <p class="card-title titre-card">Fiche Technique<img src="{{asset('images/etoile.png')}}" alt="#"></p>
+
+               <!-- Image comparatif taille -->
+               <img class="card-img-top card-img-top-fiche" src="{{asset('images/Photo.png')}}" alt="Card image cap">
+
+
+               <div class="d-inline-flex flex-row justify-content-between" id="information-fiche-technique-générale">
+                 <div class="d-flex flex-column">
+                   <p class="card-texte">Taille</p>
+                   <p class="card-text">{{oneDinosaur.height}}</p>
+                 </div>
+
+                 <div class="d-flex flex-column">
+                  <p class="card-texte">Hauteur</p>
+                  <p class="card-text">{{oneDinosaur.length}}</p>
+                </div>
+
+                <div class="d-flex flex-column">
+                  <p class="card-texte">Poids</p>
+                  <p class="card-text">{{oneDinosaur.weight}}</p>
+                </div>
+               </div>
+               <article id="information-fiche-technique-précise">
+                 <p class="card-title card-titre">Classification</p>
+                 <p class="card-text">{{oneDinosaur.classification.classification}}</p>
+
+                 <p class="card-title card-titre">Période</p>
+                 <p class="card-text">{{oneDinosaur.period}}</p>
+
+                 <p class="card-title card-titre">Zone d'habitat</p>
+                 <p class="card-text">{{oneDinosaur.localisation}}</p>
+               </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Frise Chronologique -->
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+             <img src="{{asset('images/frise-chronologique.png')}}" alt="" usemap="#frise">
+             <map name="frise">
+              <area class="periode-selec" shape="circle" coords="70,134,41" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="132,87,21" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="223,48,21" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="342,32,21" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="452,48,21" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="538,87,21" href="index.html" alt="">
+              <area class="periode-non-selec" shape="circle" coords="607,140,21" href="index.html" alt="">
+             </map>
+  
+             <p class="nom-scientifique date-frise">150 millions d'années</p>
+            </div>
+          </div>
+        </article>
+        <!-- Fin Article-->
+  
+        <!-- Début Navigation Informations-->
+        <section id="nav-fiche">
+  
+          <!-- Navbar -->
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <nav class="nav justify-content-around">
+                  <a class="nav-link onglet" href="#">Informations supplémentaires</a>
+                  <a class="nav-link onglet" href="#">Dashbord du dinosaure</a>
+                  <a class="nav-link onglet" href="#">Contenus associés</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Barre de pregression -->
+          <div class="progress-container">
+            <div class="progress-bar" id="scroll-bar-progress"></div>
+          </div>
+        </section>
+        <!-- Fin Navigation-->
+  
+        <!-- Début Section-->
+        <section id="informations-supplementaires">
+  
+          <!-- Titre -->
+          <div class="container">
+            <div class="row" id="informations-supplementaires-haut">
+              <div class="col d-flex justify-content-start">
+                <h2>Inform<span class="dino-poussin">a</span>tions Supplém<span class="dino-poussin">e</span>ntaires</h2>
+              </div>
+            </div>
+
+            <!-- Articles Informations Supplementaires -->
+
+            {% for information in oneDinosaur.moreInformation %}
+            
+              <div class="row">
+            <div class="col-5 ">
+              <div class="card card-photo">
+              
+                <img class="card-img-top card-img-top-photo" src="{{asset('img/'information.image)}}" alt={{information.alt}}>
+              </div>
+            </div>
+            
+            <div class="col-7 d-flex align-self-center">
+              <div class="card card-info">
+                <div class="card-body card-body-info">
+                  <p class="card-title titre-card">{{information.title}}</p>
+                  <p class="card-text">{{information.description}}</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="picto-dino-livre-right">
+              <img src="{{asset('images/dino-livre-little-right.png')}}" alt="">
+            </div>
+          </div>
+            {% endfor %}
+
+          
+          
+          
+          
+      <!-- Fin Section-->
+
+      <!-- Début Section-->
+      <section id="dashboard-fiche">
+
+        <!-- Titre -->
+        <div class="container">
+          <div class="row" id="dashboard-haut">
+            <div class="col">
+              <h2>Dashb<span class="dino-pomme">o</span>ard du din<span class="dino-pomme">o</span>saure</h2>
+            </div>
+          </div>
+
+          <!-- Dashboard -->
+          <div class="row" id="dashboard-bas">
+            <div class="col-6 text-center">
+              <img src="{{asset('images/dashboard-ellipse.png')}}" alt="">
+              <p class="ellipse-texte info-scientifique"><span class="dino-pomme">32</span><br>T-REX TROUVÉS</p>
+            </div>
+
+            <div class="col-6">
+              <div class="d-flex row justify-content-center" id="regime">
+                <img src="{{asset('images/dashboard-viande.png')}}" alt="#">
+                <p class="info-scientifique d-flex align-self-center">{{oneDinosaur.regime}}</p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <p class="titre-scientifique">Régime alimentaire</p>
+              </div>
+
+              <div class="d-flex row justify-content-center" id="poids">
+                <img src="{{asset('images/dashboard-poids.png')}}" alt="#">
+                <p class="info-scientifique d-flex align-self-center">{{oneDinosaur.weight}}</p>
+              </div>
+              <div class="d-flex justify-content-center">
+                <p class="titre-scientifique">Poids</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fin Section-->
+
+      <!-- Début Section-->
+      <section id="ses-contemporains">
+        <div class="container">
+          <div class="row" id="ses-contemporains-haut">
+            <div class="col d-flex justify-content-center">
+              <h2>Ses cont<span class="dino-poussin">e</span>mporains</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid d-flex flex-row justify-content-start" id="scroll-horizontal">
+          
+          <div class="d-flex" id="ses-contemporains-bas">
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}" alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+
+              <div class="card card-small card-scroll">
+                <img class="card-img-top card-img-top-small" src="{{asset('images/Photo.png')}}"alt="Card image cap">
+                <div class="card-body card-body-small">
+                 <p class="card-text">Some quick example text.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+    
+      </section>
+      <!-- Fin Section-->
+      <!-- Début Section-->
+      <section id="contenu-associe">
+        <div class="container">
+          <div class="row" id="contenu-associe-haut">
+            <div class="col d-flex justify-content-center">
+              <h2>Cont<span class="dino-pomme">e</span>nus assoc<span class="dino-pomme">i</span>és</h2>
+            </div>
+          </div>
+
+          <!-- Titre -->
+          <div class="row">
+            <div class="col-7 d-flex justify-content-start align-self-center">
+              <h3>Vidé<span class="dino-pomme">o</span>s</h3>
+            </div>
+            <div class="col-5 d-flex justify-content-center">
+              <img src="{{asset('images/dino-popcorn-01.png')}}" alt="">
+            </div>
+          </div>
+        </div>
+
+        <!-- Video -->
+        <div class="container-fluid d-flex justify-content-center">
+          <video controls src="{{asset('images/videos/video-test.mp4')}}"></video>
+        </div>
+
+        <!-- Caroussel -->
+        <div class="container">
+          <div id="carousel">
+
+            <div class="hideLeft">
+             <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="prevLeftSecond">
+             <img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="prev">
+             <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="selected">
+             <img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="next">
+             <img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="nextRightSecond">
+             <img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg" alt="#">
+           </div>
+     
+           <div class="hideRight">
+             <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg" alt="#">
+           </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row" id="contenu-associe-bas">
+            <div class="col d-flex flex-row justify-content-center">
+              <div class="buttons">
+                <button class="carousel-control-prev-icon" id="carrousel-prev"></button>
+                <button class="carousel-control-next-icon" id="caroussel-next"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fin Section-->
+
+      <!-- Début Section-->
+
+        <section id="podcast">
+          <!-- Titre -->
+          <div class="container">
+            <div class="row" id="podcast-haut">
+              <div class="col d-flex justify-content-start">
+                <h3>Podc<span class="dino-pomme">a</span>st</h3>
+              </div>
+            </div>
+          </div>
+  
+            <div class="picto-dino-disco">
+              <img src="{{asset('images/dino-disco.png')}}" alt="#">
+            </div>
+            
+            <div class="row" id="lecteur-audio">
+              <div class="col">
+                <div class="card card-podcast">
+                  <div class="card-body card-body-podcast d-flex flex-row">
+                    <button type="button" class="icone">
+                      <img src="{{asset('images/player-large.png')}}" alt="#">
+                    </button>
+                    <img class="card-img-top" src="{{asset('images/ligne-temporelle.png')}}" alt="Card image cap">
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="row" id="podcast-bas">
+              <div class="col d-flex justify-content-center">
+                <button type="button" class="button-gradient-large">
+                  <span class="button-text">Testez vos connaissances !</span>
+                </button>
+              </div>
+            </div>
+        </section>
+      <!-- Fin Section-->
+
+    </main>
+    <!-- Fin du main-->
+</main>
+
+{% endblock %}

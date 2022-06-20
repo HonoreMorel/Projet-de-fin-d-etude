@@ -1,0 +1,69 @@
+.card-question h2{
+    color: var(--dino-neige);
+    margin-top: 100px;
+}
+
+.card-reponse h2, .button-suivant-large span{
+    color: var(--dino-neige);
+}
+
+.button-question-medium{
+    background-image: linear-gradient(rgba(14, 14, 14, 0.75), rgba(14, 14, 14, 0.75)), url("../images/question-01.png");
+    background-size: cover;
+}
+
+#question-espacement-haut{
+    padding-top: 20px;
+}
+
+#question-espacement-bas{
+    padding-bottom: 50px;
+}
+
+#dino-quiz .logo-quiz{
+    position: absolute;
+    z-index: 2;
+}
+
+#dino-quiz{
+    background-image: url("../images/question-01.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 1;
+}
+
+.card-question{ 
+    background: rgba(14, 14, 14, 0.75);
+    box-shadow: 0px 4px 4px rgba(14, 14, 14, 0.25);
+    border-radius: 25px;
+    height: auto;
+    margin-top: 50px
+}
+
+.card-reponse{ 
+    display: block;
+    background: rgba(14, 14, 14, 0.75);
+    box-shadow: 0px 4px 4px rgba(14, 14, 14, 0.25);
+    border-radius: 25px;
+    height: auto;
+    margin-top: 50px
+}
+
+.card-body p{
+    margin-top: 20px;
+    color: var(--dino-neige);
+}
+
+.button-question-medium .text-question{
+    color: var(--dino-neige);
+}
+
+.espace{
+    margin-top: 50px; 
+}
+
+.espace-reponse{
+    margin-top: 25px
+
+}
