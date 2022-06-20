@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 16 juin 2022 à 07:47
+-- Généré le : ven. 17 juin 2022 à 11:31
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -75,18 +75,57 @@ INSERT INTO `activity_filter` (`activity_id`, `filter_id`) VALUES
 --
 
 DROP TABLE IF EXISTS `answer`;
-CREATE TABLE IF NOT EXISTS `answer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `answer` (
+  `id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
   `answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` tinyint(1) NOT NULL,
-  `explication` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_DADD4A251E27F6BF` (`question_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `answer` (`id`, `question_id`, `answer`, `state`) VALUES
+(6, 24, '500 kilos', 0),
+(7, 24, '230 kilos', 1),
+(8, 24, '150 kilos', 0),
+(9, 24, '300 kilos', 0),
+(10, 25, 'Grimper', 0),
+(11, 25, 'Démoniaque', 0),
+(12, 25, 'se faire une manucure', 0),
+(13, 25, 'Chaisser ses proies', 1),
+(14, 26, 'à se relever', 0),
+(15, 26, 'à l\'acouplement', 1),
+(16, 26, 'Crétacé', 0),
+(17, 26, 'à la mise en piéce des proies', 0),
+(18, 27, '15 t/cm²', 0),
+(19, 27, '19 t/cm²', 1),
+(20, 27, '21 t/cm²', 0),
+(21, 27, '23 t/cm²', 0),
+(22, 28, '24 km/h', 0),
+(23, 28, '22 km/h', 0),
+(24, 28, '19 km/h', 1),
+(25, 28, '16 km/h', 0),
+(27, 29, 'Europe', 0),
+(28, 29, 'Amérique du Nord', 1),
+(29, 29, 'Asie', 0),
+(30, 29, 'Amérique du Sud', 0),
+(31, 30, 'Henry Fairfield Osborn', 1),
+(32, 30, 'Albert Einstein', 0),
+(33, 30, 'Isaac Newton', 0),
+(34, 30, 'Barack Obama', 0),
+(35, 31, 'Carnivore', 1),
+(36, 31, 'Herbivore', 0),
+(37, 31, 'Omnivore', 0),
+(38, 31, 'Insectivore', 0),
+(39, 32, 'Démoniaque', 0),
+(40, 32, 'Crétacé', 1),
+(41, 32, 'Jurassique', 0),
+(42, 32, 'Trias', 0),
+(43, 33, 'Il a 65 millions d\'années', 1),
+(44, 33, 'Il a 85 millions d\'années', 0),
+(45, 33, 'Il a 75 millions d\'années', 0),
+(46, 33, 'Il a 95 millions d\'années', 0);
 --
 -- Structure de la table `classification`
 --
@@ -162,12 +201,7 @@ CREATE TABLE IF NOT EXISTS `doctrine_migration_versions` (
 -- Déchargement des données de la table `doctrine_migration_versions`
 --
 
-INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20220610102803', '2022-06-10 10:28:07', 1614),
-('DoctrineMigrations\\Version20220613075427', '2022-06-13 07:54:43', 119),
-('DoctrineMigrations\\Version20220613145610', '2022-06-13 14:56:18', 693),
-('DoctrineMigrations\\Version20220614142115', '2022-06-14 14:21:21', 323),
-('DoctrineMigrations\\Version20220614142423', '2022-06-14 14:24:26', 143);
+
 
 -- --------------------------------------------------------
 
@@ -210,8 +244,8 @@ CREATE TABLE IF NOT EXISTS `filter` (
 --
 
 INSERT INTO `filter` (`id`, `filter`) VALUES
-(1, 'Date'),
-(2, 'En cours');
+(1, 'Familles'),
+(2, 'Groupes');
 
 -- --------------------------------------------------------
 
@@ -233,7 +267,13 @@ CREATE TABLE IF NOT EXISTS `game` (
 --
 
 INSERT INTO `game` (`id`, `name`, `image`, `instructions`) VALUES
-(1, 'Le jeu', 'halo.jpg', '<div>attention</div>');
+(2, 'DinoMémoire', 'memories.png', '<div>DinoMémoire</div>'),
+(3, 'Les 7 erreurs', '各rreurs.png', '<div>Les 7 erreurs</div>'),
+(4, 'DinoFléché', 'dinofleche.png', '<div>DinoFléché</div>'),
+(5, 'SauteDino', 'sautedino.jpg', '<div>SauteDino</div>'),
+(6, 'SudoDino', 'sudoku.png', '<div>SudoDino</div>'),
+(7, 'Puzzle', 'puzzle.png', '<div>Puzzle</div>');
+
 
 -- --------------------------------------------------------
 
@@ -250,14 +290,17 @@ CREATE TABLE IF NOT EXISTS `image` (
   `main_image` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_C53D045F4C3E9E0E` (`dinosaur_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `image`
 --
 
 INSERT INTO `image` (`id`, `dinosaur_id`, `url`, `alt`, `main_image`) VALUES
-(3, 3, 'T-rex.jpg', 'trex', 0);
+(3, 3, 'T-rex.jpg', 'trex', 1),
+(4, 4, 'Diplodocus.jpg', 'diplo', 1),
+(5, 5, 'triceratops.jpg', 'tri', 1),
+(6, 6, 'Velociraptor.jpg', 'vélo', 1);
 
 -- --------------------------------------------------------
 
@@ -358,21 +401,33 @@ INSERT INTO `more_information` (`id`, `dinosaur_id`, `image`, `title`, `descript
 --
 
 DROP TABLE IF EXISTS `question`;
-CREATE TABLE IF NOT EXISTS `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL,
   `subject_id` int(11) NOT NULL,
   `statement` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  `explication` longtext COLLATE utf8mb4_unicode_ci,
+   PRIMARY KEY (`id`),
   KEY `IDX_B6F7494E23EDC87` (`subject_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `question`
 --
 
-INSERT INTO `question` (`id`, `subject_id`, `statement`, `image`) VALUES
-(2, 1, 'oui', NULL);
+
+INSERT INTO `question` (`id`, `subject_id`, `statement`, `image`, `explication`) VALUES
+(24, 15, 'Combien de nombre de kilos de viande le tyrannosaure peut-il ingurgiter en un seule bouchée?', NULL, 'Un des plus redoutables prédateurs que la terre a connus pouvait engloutir plus de 230 kg de viande en une seule bouchée.'),
+(25, 15, 'A quoi servaient les griffes de tyrannosaure?', NULL, 'Le reste de la communauté scientifique n\'est pas encore persuadée que les bras du T. Rex servaient bien à la mise en pièce des proies du redoutable dinosaure, mais il semble illogique pour moi que ces petits bras aient pu être utilisés pour découper des proies'),
+(26, 15, 'A quoi servaient les bras du Tyrannosaure?', NULL, 'Faute de preuves plus avancées, il favorise l’idée selon laquelle les bras du T.Rex étaient utilisés pour « des actions mineures et complémentaires » telles que l’accouplement, bien que Stanley affirme que l\'utilisation des griffes auraient été dangereuse pendant l\'acte sexuel.'),
+(27, 15, 'Quelle pression exercée la mâchoire du T-Rex?', NULL, 'Lorsque le Tyrannosaurus Rex mordait dans ses proies, sa mâchoire exerçait une pression de 15 tonnes par centimètre carré, un record dans le monde animal.'),
+(28, 15, 'A quelle vitesse va le T-Rex?', NULL, 'Contrairement à ce que l\'on pourrait croire, le roi des lézards n\'était pas conçu pour la rapidité. Selon une nouvelle simulation informatique détaillée, la vitesse de déplacement de l\'imposant Tyrannosaurus rex n\'excédait généralement pas 19 km/h.'),
+(29, 15, 'Dans quel continent à vécu le T-Rex?', NULL, 'Le tyrannosaure a vécu sur des territoires terrestres au climat alors tropical correspondant aujourd\'hui à l\'Amérique du Nord.'),
+(30, 15, 'Qui a decouvert le T-Rex et la nommée?', NULL, 'Les premiers restes significatifs furent découverts en 1902 et l\'animal fut décrit et baptisé par Henry Fairfield Osborn en 1905'),
+(31, 15, 'Le Tyrannosaure était principalement?', NULL, 'Ce grand carnivore des temps anciens n\'était pas qu\'un prédateur, c\'était aussi un charognard opportuniste. Les paléontologues ont découvert que le Tyrannosaurus Rex pourchassait ses proies, arrachait des morceaux de chair et rejetait sa tête en arrière pour les jeter dans sa gueule.'),
+(32, 15, 'A quelle époque a vécu le T-Rex?', NULL, 'Le tyrannosaure a vécu à la toute fin de la période du Crétacé (appelé Crétacé Supérieur ou Maastrichtien)'),
+(33, 15, 'Quand a disparu le T-Rex?', NULL, 'Il y a 65 millions d\'années en arrière, un gigantesque astéroïde venait frapper la Terre, entraînant la disparition des dinosaures');
+
 
 -- --------------------------------------------------------
 
@@ -394,15 +449,29 @@ CREATE TABLE IF NOT EXISTS `score` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
-
+INSERT INTO `score` (`id`, `subject_id`, `user_id`, `game_id`, `score`) VALUES
+(1, 15, 2, NULL, 60),
+(2, 15, 2, NULL, 15),
+(3, 15, 2, NULL, 15),
+(4, 15, 2, NULL, 15),
+(5, 15, 2, NULL, 15),
+(6, 15, 2, NULL, 15),
+(7, 15, 2, NULL, 15),
+(8, 15, 2, NULL, 0),
+(9, 15, 2, NULL, 30),
+(10, 15, 2, NULL, 40),
+(11, 15, 2, NULL, 60),
+(12, 15, 2, NULL, 60),
+(13, 15, 2, NULL, 30);
 --
 -- Structure de la table `subject`
 --
 
 DROP TABLE IF EXISTS `subject`;
-CREATE TABLE IF NOT EXISTS `subject` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `subject` (
+  `id` int(11) NOT NULL,
   `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -410,8 +479,11 @@ CREATE TABLE IF NOT EXISTS `subject` (
 -- Déchargement des données de la table `subject`
 --
 
-INSERT INTO `subject` (`id`, `subject`) VALUES
-(1, 'Sujet');
+INSERT INTO `subject` (`id`, `subject`, `image`) VALUES
+(15, 'T-rexQuiz', 'silhouette-tyrannosaurus.png'),
+(16, 'DiploQuiz', 'silhouette-diplodocus.png'),
+(17, 'IguaQuiz', 'silhouette-iguanodon.png'),
+(18, 'Quiz le monde des dinos', 'quizdino.jpg');
 
 -- --------------------------------------------------------
 
@@ -459,7 +531,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `nickname`, `photo`) VALUES
-(28, 'oui@gmail.oui', '[\"ROLE_ADMIN\"]', '$2y$13$vNO5zVr9nfbASJpmyS0t8.s1Jd//IO9x6Fztnc3gMovLjx6Fr8Z8O', 'DINGUE', 'avatar.png');
+(28, 'oui@gmail.oui', '[\"ROLE_ADMIN\"]', '$2y$13$vNO5zVr9nfbASJpmyS0t8.s1Jd//IO9x6Fztnc3gMovLjx6Fr8Z8O', 'DINGUE', 'avatar.png'),
+(1, 'anibal.juarez@gmail.com', '[]', '$2y$13$vNZZ9givK3mpeRclW9dIQeLdL08f4g6sDM8nu18hKMcUe8tRCmOhO', 'anibal', 'avatar.png'),
+(2, 'fajure80@hotmail.com', '[\"ROLE_USER\", \"ROLE_ADMIN\"]', '$2y$13$n2yRjY9pormX30Vl90qJl.M0ku7lpbnRUzIGcBH.zibun4sRlo5OG', 'anibal', 'avatar.png');
 
 --
 -- Contraintes pour les tables déchargées
