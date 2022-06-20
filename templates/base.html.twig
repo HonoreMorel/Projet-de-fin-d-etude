@@ -37,7 +37,7 @@
          <nav class="navbar navbar-expand-xl navbar-light fixed-top" id="barre-de-navigation">
   
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{path('app_home')}}">
               <img src="/images/logo-desktop.png" alt="">
             </a>
     
@@ -47,8 +47,8 @@
     
             <div class="collapse navbar-collapse justify-content-center text-xl-center" id="navbarNavAltMarkup">
               <div class="navbar-nav d-flex flex-row">
-                <a class="nav-item nav-link onglet" href="#">Les espèces</a>
-                <a class="nav-item nav-link onglet" href="#">Multimédias</a>
+                <a class="nav-item nav-link onglet" href="{{path('app_espece')}}">Les espèces</a>
+                <a class="nav-item nav-link onglet" href="{{path('app_multimedia')}}">Multimédias</a>
                 <a class="nav-item nav-link onglet" href="#">Les activités</a>
                 <a class="nav-item nav-link onglet" href="#">Les évènements</a>
               </div>
@@ -96,8 +96,8 @@
                 </a>
                 {% if is_granted( 'ROLE_USER') %}  
                 <div class="user-name">
-                <p class="user-name">{{ app.user.username }}</p>
-                {# <p class="user-name">Ludovic</p> <p class="user-name">Lawson</p> #}
+                <p class="user-name">{{ app.user.nickname }}</p>
+                {# <p class="user-name">Ludovic</p> #}
                 </div>
                 {% endif %}
                 </a>

@@ -1,3 +1,4 @@
+
 /***** Import des Polices ****/
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
@@ -19,7 +20,6 @@ html{
 #padding-top-espacement-nav{
     padding-top: 1px;
 }
-
 
 /** Typographie **/
 h1, h2, h3{
@@ -46,24 +46,43 @@ p, a, blockquote{
 }
 
 
-button-text{
+.button-text{
     font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
+button-text{
+  font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  max-width:195px;
+}
 
-header-text{
+
+.header-text{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
+header-text{
+  font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
 
-titre-card{
+
+.titre-card{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
+}
+
+titre-card{
+  font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 
@@ -123,19 +142,10 @@ nom-scientifique, info-scientifique{
 .icone-nav{
     border: 0;
     background-color: transparent;
-    margin-left: 2rem;
+    margin-left: 0.3rem;
     margin-right: 0.3rem;
     margin-top: 2.0rem;
     margin-bottom: 2.0rem;
-}
-
-.user-name{
-  line-height: 10px;
-  margin-top: 1rem;
-
-  font-size: 1.5rem;
-
-
 }
 
 /** Responsive **/
@@ -221,15 +231,8 @@ footer a:hover {
   background-color: white;
   width: 19%;
   margin-bottom: -50px;
-  width: 310px;
+  max-width: 310px;
   padding-top: 1rem;
-
-}
-
-@media screen and (max-width:1200px){
-.modals{
-  left: 50%;
-}
 
 }
 
@@ -317,7 +320,7 @@ form{
   color: red;
 }
 
-input.form-control{
+input{
   background-color: #D9D9D9;
   border: none;
   width:100%;
@@ -359,7 +362,6 @@ input.form-control{
   margin-bottom: 3rem;
   text-align: left;
   color: black;
-  background-color: white;
 }
 
 
