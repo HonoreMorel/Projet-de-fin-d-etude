@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{asset('css/style-base.css')}}">
+
     <link rel="stylesheet" href="{{asset('css/style-component.css')}}">
     <link rel="stylesheet" href="{{asset('css/multimedia-jeux.css')}}">
     
@@ -15,9 +15,9 @@
         <h2 id="padding-top-espacement-nav" >Je<span class="dino-poussin">u</span>x et Q<span class="dino-poussin">u</span>izz</h2>
         
         <div class="filtre marge">
-            <button id="btn_all" type="button" class="button-gradient-little"><value class="button-text">Tous</value></button>
-            <button id="btn_game" type="button" class="button-white-little"><value class="button-text">Jeux</value></button>
-            <button id="btn_quizz" type="button" class="button-white-little"><value class="button-text">Quizz</value></button>
+            <button id="btn_all" type="button" class="button-gradient-little button-text">Tous</button>
+            <button id="btn_game" type="button" class="button-white-little button-text">Jeux</button>
+            <button id="btn_quizz" type="button" class="button-white-little button-text">Quizz</button>
         </div>
         
         <div id="remove" class="marge" >

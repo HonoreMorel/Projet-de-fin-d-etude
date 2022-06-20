@@ -12,7 +12,12 @@ function showQuizz(){
     remove.classList.add('marge');
     btnQuizz.classList.remove("button-white-little");
     btnQuizz.classList.add("button-gradient-little");
+
+    btnGame.classList.remove("button-gradient-little");
     btnGame.classList.add("button-white-little");
+
+
+    btnAll.classList.remove("button-gradient-little");
     btnAll.classList.add("button-white-little");
 
     let game=document.querySelectorAll('.game');
@@ -31,10 +36,17 @@ function showQuizz(){
 
 function showAll(){
     remove.classList.add('marge');
-    btnAll.classList.remove("button-white-little");
-    btnAll.classList.add("button-gradient-little");
+
     btnQuizz.classList.add("button-white-little");
+    btnQuizz.classList.remove("button-gradient-little");
+
+    btnGame.classList.remove("button-gradient-little");
     btnGame.classList.add("button-white-little");
+
+
+    btnAll.classList.add("button-gradient-little");
+    btnAll.classList.remove("button-white-little");
+
    
     let game=document.querySelectorAll('.game');
     let quizz=document.querySelectorAll('.quizz');
@@ -53,11 +65,19 @@ function showAll(){
 function showGame(){
     remove.classList.remove('marge');
     classe.classList.remove('padding-top-espacement-nav');
-    btnGame.classList.remove("button-white-little");
-    btnGame.classList.add("button-gradient-little");
+
     btnQuizz.classList.add("button-white-little");
-   
+    btnQuizz.classList.remove("button-gradient-little");
+
+    btnGame.classList.add("button-gradient-little");
+    btnGame.classList.remove("button-white-little");
+
+
+    btnAll.classList.remove("button-gradient-little");
     btnAll.classList.add("button-white-little");
+
+   
+    
     let game=document.querySelectorAll('.game');
     let quizz=document.querySelectorAll('.quizz');
     

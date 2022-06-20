@@ -23,7 +23,7 @@ class QuizzController extends AbstractController
     {
         $listGame= $gameRepository->findAll();
         $listSubjects = $subjectRepository->findAll();
-
+        
         return $this->render('quizz/index.html.twig', [
             'subjects' => $listSubjects,
             'games'    =>$listGame
@@ -94,7 +94,6 @@ class QuizzController extends AbstractController
                     $scoreUser=new Score();
                     $subject=$entityManager->getRepository(Subject::class)->find($id_subject);
                     $scoreUser->setSubject($subject);
-                    //dd($score_user);
                     $scoreUser->setScore($score_user);
                     $scoreUser->setUser($userInterface);
                     $entityManager->persist($scoreUser);
@@ -102,7 +101,7 @@ class QuizzController extends AbstractController
                     return new Response('score ajouté');
 
                 }else{
-                    return new Response('Personne non conectée');
+                    return new Response('Personne non connectée');
                 }
                
 
