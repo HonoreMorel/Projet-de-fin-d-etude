@@ -39,7 +39,7 @@ const Recherche = () => {
                     <input type="text" value={recherche} onChange={changeValue} placeholder='Recherche' />
                 <div className="position">
                     <ul>
-                        {result.map((res, i) => <li key={i}> <img src={"/img/"+res.url}/>{res.common_name}</li>)}
+                        {result.map((res, i) => <li key={i}> <a href={"/espece/"+res.id}><img src={"/img/"+res.url}/>{res.common_name}</a></li> )}
                     </ul>
                 </div>
                 </div>

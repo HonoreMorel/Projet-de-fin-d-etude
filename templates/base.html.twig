@@ -17,7 +17,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
-    {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
     
         {% block javascripts %}
@@ -37,7 +37,7 @@
          <nav class="navbar navbar-expand-xl navbar-light fixed-top" id="barre-de-navigation">
   
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ path('app_home')}}">
               <img src="/images/logo-desktop.png" alt="">
             </a>
     
@@ -84,7 +84,7 @@
             <section>
               <h1 class="sign-up-title">Inscription</h1>
               
-              <a class="create-account-link" href="" >
+              <a class="create-account-link" href="{{ path('app_user_new') }}" >
                   <p>Je crée mon compte </p> <div class="space">›</div>    
             </a>
             </section>
