@@ -1,4 +1,4 @@
-section{
+section.block-multimedia{
    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png);
   /*  background-color: red; */
 
@@ -67,5 +67,5 @@ a:hover{
 .card-large{
    margin-left: auto;
    margin-right: auto;
-   /* margin-bottom: 50px; */
+   /*margin-bottom: 50px; */
 }

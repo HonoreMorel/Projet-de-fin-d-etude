@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
+{{ parent()}}
 
 <link rel="stylesheet" href="/css/style-component.css">
 <link rel="stylesheet" href="/css/multimedia.css">
@@ -16,8 +17,8 @@
 {% block body %}
     <!-- Début du contenu de la page-->
  <!-- Début du contenu de la page-->
-<main id="multimedia">
-  <section class="multimedia-main-section">
+<main>
+  <section class="block-multimedia" id="multimedia">
       <div class="container-fluid  marge" id="padding-top-espacement-nav">
         <div class="row marge-haut">
           <div class="col-4">
@@ -52,7 +53,7 @@
              <img class="card-img-top card-img-top-small image" src="/images/dino-game1.png" alt="Card image cap">
              </a>
               <div class="card-body card-body-small">
-              <p class="card-text titre-card"><a href="#">Quizz/Jeux</a> </p>
+              <p class="card-text titre-card"><a href="{{path('app_quizz')}}">Quizz/Jeux</a> </p>
               </div>
             </div>
           </div> 

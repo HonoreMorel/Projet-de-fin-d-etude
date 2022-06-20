@@ -2,9 +2,7 @@
 
 /** Règles Générales **/
 
-main{
-    padding-top: 100px;
-}
+
 
 /** Texte **/
 
@@ -69,6 +67,10 @@ h1, h2, header-text{
 /*** Article nouvelle-decouverte ***/
 #background-video-bottom{
     padding-bottom: 50px;
+}
+
+#nouvelle-decouverte{
+    padding-top: 100px;
 }
 
 /*** Section a-la-une ***/
