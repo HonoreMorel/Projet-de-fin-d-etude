@@ -9,6 +9,7 @@
 /var/
 /vendor/
 /migrations/
+/public/videos/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
