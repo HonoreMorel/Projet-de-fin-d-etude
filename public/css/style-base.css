@@ -46,28 +46,28 @@ p, a, blockquote{
 }
 
 
-button-text{
+.button-text{
     font-family:'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
 
-header-text{
+.header-text{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
 
-titre-card{
+.titre-card{
     font-family: 'Comfortaa', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
 
-nom-scientifique, info-scientifique{
+.nom-scientifique, .info-scientifique{
     font-family: 'EB Garamond', 'Arial Narrow', Arial, sans-serif;
     font-weight: normal;
     font-style: italic;

@@ -14,7 +14,6 @@
 .button-gradient-little{
     border: none;
     background: linear-gradient(var(--dino-poussin), var(--dino-pomme));
-    max-width: 195px;
     border-radius: 5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -23,7 +22,6 @@
 .button-white-little{
     border: none;
     background: var(--dino-neige);
-    max-width: 195px;
     border-radius: 5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
