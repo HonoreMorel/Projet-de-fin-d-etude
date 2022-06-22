@@ -86,7 +86,7 @@
               <h1 class="sign-up-title">Inscription</h1>
               
               <a class="create-account-link" href="{{ path('app_user_new') }}" >
-                  <p>Je crée mon compte </p> <div class="space">›</div>    
+                  <p>Je crée mon compte </p> <div class="space"></div>    
             </a>
             </section>
         </div>
@@ -97,7 +97,9 @@
                 </a>
                 {% if is_granted( 'ROLE_USER') %}  
                 <div class="user-name">
-                <p>{{ app.user.nickname }}</p>
+                <p class="user-name">{{ app.user.nickname }}</p>
+                <a class="color" href="{{ path('app_user_show') }}">Profil</a>
+                <a class="color" href="{{ path('app_logout') }}">Déconnexion</a>
                 {# <p class="user-name">Ludovic</p> #}
                 </div>
                 {% endif %}
