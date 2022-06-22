@@ -107,10 +107,11 @@ function showQuestion(item){
     
     gameSection.innerHTML="";
     gameSection.innerHTML +=`
+
       <div class="container" id="question-espacement-haut">
 
         <div class="d-flex justify-content-center">
-          <img class="logo-quiz" src="assets/images/logo-quiz.png" alt="#">
+          <img class="logo-quiz" src="/images/logo-quiz.png" alt="#">
         </div>  
 
         <div class="row"> <!-- conteneur flex -->

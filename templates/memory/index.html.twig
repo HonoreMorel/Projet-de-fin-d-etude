@@ -5,19 +5,23 @@
 {{ parent() }}
 
 <link rel="stylesheet" href="/css/memory-style.css">
+<link rel="stylesheet" href="/css/multimedia.css">
 
 
 {% endblock %}
 
 
-{% block title %}Jeu de memoire{% endblock %}
+{% block title %}Jeu de mémoire{% endblock %}
 
 {% block body %}
-<main class="game-block">
-<h1>Lives : <span class="playerLivesCount"></span></h1>
-    <section class="memory-block">
+<section class="block-multimedia">
 
-    </section>
-</main>
-    <script src="/js/memory-game.js"></script>
+    <main class="game-block">
+    <h1>Chance(s) : <span class="playerLivesCount"></span></h1>
+        <section class="memory-block">
+    
+        </section>
+    </main>
+        <script src="/js/memory-game.js"></script>
+</section>
 {% endblock %}

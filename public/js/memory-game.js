@@ -9,24 +9,24 @@
 
  //Generate the data
 
- const getData=()=>[
-     {imgSrc:'/images/beatles.jpeg', name:"beatles"},
-     {imgSrc:'/images/blink182.jpeg', name:"blink182"},
-     {imgSrc:'/images/fkatwigs.jpeg', name:"fka twigs"},
-     {imgSrc:'/images/fleetwood.jpeg', name:"fleetwood"},
-     {imgSrc:'/images/joy-division.jpeg', name:"joy division"},
-     {imgSrc:'/images/ledzep.jpeg', name:"led zeppelin"},
-     {imgSrc:'/images/metallica.jpeg', name:"metallica"},
-     {imgSrc:'/images/pinkfloyd.jpeg', name:"pink floyd"},
-     {imgSrc:'/images/beatles.jpeg', name:"beatles"},
-     {imgSrc:'/images/blink182.jpeg', name:"blink182"},
-     {imgSrc:'/images/fkatwigs.jpeg', name:"fka twigs"},
-     {imgSrc:'/images/fleetwood.jpeg', name:"fleetwood"},
-     {imgSrc:'/images/joy-division.jpeg', name:"joy division"},
-     {imgSrc:'/images/ledzep.jpeg', name:"led zeppelin"},
-     {imgSrc:'/images/metallica.jpeg', name:"metallica"},
-     {imgSrc:'/images/pinkfloyd.jpeg', name:"pink floyd"},
-    ];
+const getData=()=>[
+    {imgSrc:'/img/tyra-memo.png', name:"tyra"},
+    {imgSrc:'/img/trice-memo.jpg', name:"trice"},
+    {imgSrc:'/img/velo-memo.jpg', name:"velo"},
+    {imgSrc:'/img/ptera-memo.jpg', name:"ptera"},
+    {imgSrc:'/img/d1-memo.jpg', name:"d1"},
+    {imgSrc:'/img/igua-memo.jpg', name:"igua"},
+    {imgSrc:'/img/steg-memo.jpg', name:"steg"},
+    {imgSrc:'/img/alo-memo.jpg', name:"alo"},
+    {imgSrc:'/img/tyra-memo.png', name:"tyra"},
+    {imgSrc:'/img/trice-memo.jpg', name:"trice"},
+    {imgSrc:'/img/velo-memo.jpg', name:"velo"},
+    {imgSrc:'/img/ptera-memo.jpg', name:"ptera"},
+    {imgSrc:'/img/d1-memo.jpg', name:"d1"},
+    {imgSrc:'/img/igua-memo.jpg', name:"igua"},
+    {imgSrc:'/img/steg-memo.jpg', name:"steg"},
+    {imgSrc:'/img/alo-memo.jpg', name:"alo"},
+];
 
     //Randomize the array
 
