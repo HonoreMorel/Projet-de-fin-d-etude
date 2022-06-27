@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Activités{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="css/notrestyle2.css">
+<link rel="stylesheet" href="css/style-base.css'">
+<link rel="stylesheet" href="css/style-component.css">
+
+
+
+    
+{% endblock %}
+{% block body %}
+
+<main id="activity-main-style">  
+      <section id="titreEvenement">
+        <h2 class="pt-5">Les activités :</h2>
+      </section>
+      <section id="btnActivity">
+        <button type="button" id="btnTous" data-cat="all" class="btnActivity btn-light mr-3 rounded-pill btn btn-lg">Tous</button>
+        <button type="button" id="btnYoung" data-cat="Jeunes" class="btnActivity btn-light mr-3 rounded-pill btn btn-lg">Jeunes publics</button>
+        <button type="button" id="btnAdult" data-cat="Adultes" class="btnActivity btn-light mr-3 rounded-pill btn btn-lg">Adultes</button>
+        <button type="button" id="btnFamilly" data-cat="Familles" class="btnActivity btn-light mr-3 rounded-pill btn btn-lg">Familles</button>
+        <button type="button" id="btnGroup" data-cat="Groupes" class="btnActivity btn-light mr-3 rounded-pill btn btn-lg">Groupes</button>
+      </section>
+
+    <section id="sectionCard">
+        {% for oneActivity in activities %}
+            {% set activity =  " " %}
+        {% for filters in oneActivity.filter %}
+            
+            {% set activity = activity ~ (filters.filter|join('')) ~ " " %}
+            {% endfor %}
+        <section class="allEvent all {{activity}}">
+        <div class="card mt-5" style="max-width: 100%;">
+            <div class="row g-0">
+            <div class="col-md-2">
+                {# <img src="./assets/css/video-test-fond.png" class="img-fluid rounded-start" alt="...">#}
+            </div> 
+            <div class="col-md-10">
+                <div class="card-body">
+                <h3 class="card-title">{{oneActivity.title}}</h3>
+                <div id="btnInActv">
+
+                 {% for filters in oneActivity.filter %}
+                    <button type="button" class="btnInActivity btn-light">{{filters.filter}}</button>
+                 {% endfor %}
+
+                
+                
+                </div>
+                <p class="card-text"> Description de l'activité : </p>
+                <p class="card-text">{{oneActivity.description}}</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <button type="button" id="buttonReserv" class="button-gradient-medium">
+                    <value class="button-text">RESERVER</value>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </section>
+    {% endfor %}
+</section>
+
+</main>
+<script src="{{asset('js/activity.js')}}"></script>
+{% endblock %}

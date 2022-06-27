@@ -236,8 +236,15 @@ footer a:hover {
 
 }
 
+@media only screen and (max-width: 1200px){
+    .modals{
+    min-width: 310px;
+    }
+  }
+
 .modals.active {
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: translate(-85%, -75%) scale(1.5);
+  margin-top: 5rem;
 }
 
 .modals-header {
@@ -407,4 +414,173 @@ input{
 
 .color{
   color: #4CFF19;
+}
+
+
+@media (max-width: 1199.98px) {
+  #nouvelle-decouverte{
+      background-image: url("../images/fond-remplacement-video.png");
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  #background-video-bottom{
+      display: none;
+  }
+
+  .scroll-horizontal .card-medium{
+      width: 500px;
+  }
+
+  .scroll-horizontal .card-img-top-medium{
+      height: 300px;
+  }
+
+  .scroll-horizontal .card-body-medium{
+      height: 50px;
+  }
+
+}
+
+/* inf 992 */
+@media (max-width: 991.98px) {
+  #padding-top-espacement-nav h1{
+      font-size: 10rem;
+      padding-top: 70px; /* Règle la taille du haut du heroshot */
+  }
+
+  #background-video-bottom button{
+      padding-bottom: 70px;
+  }
+
+  #a-la-une-espacement-bas{
+      padding-bottom: 70px;
+  }
+
+  #scroll-horizontal{
+      padding-bottom: 70px;
+  }
+
+  #a-la-une-espacement-haut h2, #les-informations-du-jour h2{
+      font-size: 4rem;
+  }
+
+  .scroll-horizontal .card-medium{
+      width: 400px;
+  }
+
+  .scroll-horizontal .card-img-top-medium{
+      height: 200px;
+  }
+
+  .scroll-horizontal .card-body-medium{
+      height: 50px;
+  }
+}
+
+/* inf 768 */
+@media (max-width: 767.98px) {
+
+  header .onglet{
+      text-align: center;
+      font-size: 1.3rem;
+  }
+
+  #padding-top-espacement-nav h1{
+      font-size: 8rem;
+      padding-top: 60px; /* Règle la taille du haut du heroshot */
+  }
+
+  #background-video-bottom button{
+      padding-bottom: 60px;
+  }
+
+  #padding-top-espacement-nav button{
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
+
+  #padding-top-espacement-nav .button-text{
+      font-size: 2.8rem;
+  }
+
+  #a-la-une-espacement-bas{
+      padding-bottom: 60px;
+  }
+
+  #scroll-horizontal{
+      padding-bottom: 60px;
+  }
+
+
+  #a-la-une-espacement-haut h2, #les-informations-du-jour h2{
+      font-size: 3.5rem;
+  }
+
+
+  #padding-top-espacement-nav button{
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  footer #icone-reseau .icone-footer img{
+      max-width: 80%;
+  }
+
+  footer .button-gradient-medium{
+      max-width: 195px;
+      height: auto;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+  }
+
+  footer .button-gradient-medium .button-text{
+      font-size: 1.2rem;
+  }
+
+  footer h3{
+      font-size: 1.8rem;
+  }
+
+  footer a, p{
+      text-align: center;
+      font-size: 1.2rem;
+  }
+
+  footer a{
+      margin-left: 3px;
+      margin-right: 3px;
+  }
+}
+
+/* inf 576 */
+@media (max-width: 575.98px) {
+  #padding-top-espacement-nav h1{
+      font-size: 6rem;
+      padding-top: 50px; /* Règle la taille du haut du heroshot */
+  }
+
+  #background-video-bottom button{
+      padding-bottom: 50px;
+  }
+
+  #a-la-une-espacement-bas{
+      padding-bottom: 50px;
+  }
+
+  #scroll-horizontal{
+      padding-bottom: 50px;
+  }
+
+  #scroll-horizontal .card-medium{
+      width: 200px;
+  }
+
+  #scroll-horizontal .card-img-top-medium{
+      height: 100px;
+  }
+
+  #scroll-horizontal .card-body-medium{
+      height: 20px;
+  }
 }

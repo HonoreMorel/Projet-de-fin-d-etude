@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" href="{{asset('css/style-base.css')}}">
+<link rel="stylesheet" href="{{asset('css/style-component.css')}}">
+
+{# <link rel="stylesheet" href="{{asset('css/multimedia-jeux.css')}}"> #}
+<link rel="stylesheet" href="css/notrestyle2.css">
+    
+{% endblock %}
+
+{% block title %}Les évènements{% endblock %}
+
+{% block body %}
+<main id="event_style">
+      <section class="text-center" id="titreEvenement">
+        <h2  >Les évènements</h2>
+      </section>
+      <!-- Card affichage central-->
+<section id="sectionCard">
+
+    {% for oneEvent in events %}
+
+<section id="one_card">
+  <div class="card mt-5" style="max-width: 100%;">
+    <div class="row g-0">
+      <div class="col-md-4"> 
+        <img src="/img/{{oneEvent.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body margin-card">
+          <h3 class="card-title">{{oneEvent.title}}</h3>
+          <p class="card-text"> Description de l'évenement : </p>
+          <p class="card-text">{{ oneEvent.description|striptags }}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <a href="{{oneEvent.url}}" id="buttonReserv" class="button-gradient-medium style-button">
+              <value class="button-text">RESERVER</value>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+{% endfor %}
+
+
+
+
+</section>
+</main>
+{% endblock %}

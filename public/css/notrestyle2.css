@@ -1,0 +1,105 @@
+/* header {
+    margin-bottom: 110px;
+} */
+
+/* .padding-top-espacement-nav{
+    background: linear-gradient(var(--dino-poussin), var(--dino-pomme));
+} */
+
+/* evenements style */
+
+#question-espacement-bas{
+    display: none;
+}
+
+/* header{
+    margin-bottom: 200px;
+}
+ */
+#titreEvenement{
+    margin-bottom: 100px;
+    margin-left: 500px;
+    color: white;
+
+
+}
+
+#event_style body{
+
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(fond-info-sup.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+
+}
+
+#activity-main-style .card{
+   background-color: #0e0e0e7a;
+}
+
+#activity-main-style .card p{
+    color: white;
+}
+
+#event_style main img{
+
+    width: 500px;
+    height: 500px;
+    margin-left: 100px;
+    border-radius: 10%;
+    padding: 20px;
+}
+#buttonReserv{
+    margin-left: 555px;
+
+}
+#sectionCard p{
+    color: white;
+}
+#sectionCard h3{
+    color: white;
+    margin-bottom: 30px;
+}
+#event_style .btnActivity{
+
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-left: 20px;
+    padding-inline: 40px;
+
+}
+#btnActivity{
+    margin-left: 480px;
+    margin-bottom: 50px;
+}
+#activity-main-style  .btnInActivity{
+    padding-inline: 40px;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+#btnInActv{
+    margin-left: 545px;
+}
+
+#event_style{
+    margin-top: 116px;
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png) !important;
+}
+
+#activity-main-style  .margin-card{
+    margin-left: 6rem;
+}
+
+#activity-main-style  .style-button{
+    text-decoration: none;
+    color: var(--dino-cendre);
+    display: inline-block;
+}
+
+#activity-main-style{
+    background: linear-gradient(rgba(14, 14, 14, 0.7), rgba(14, 14, 14, 0.7)), url(../images/fond-info-sup.png) !important;
+}
+

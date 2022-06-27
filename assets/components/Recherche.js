@@ -32,6 +32,7 @@ const Recherche = () => {
         }
 
         
+        
         //prévoir un container vide dans le JSX<ul> par ex
         return(
             <>

@@ -50,8 +50,8 @@
               <div class="navbar-nav d-flex flex-row">
                 <a class="nav-item nav-link onglet" href="{{path('app_espece')}}">Les espèces</a>
                 <a class="nav-item nav-link onglet" href="{{path('app_multimedia')}}">Multimédias</a>
-                <a class="nav-item nav-link onglet" href="#">Les activités</a>
-                <a class="nav-item nav-link onglet" href="#">Les évènements</a>
+                <a class="nav-item nav-link onglet" href="{{path('app_activites')}}">Les activités</a>
+                <a class="nav-item nav-link onglet" href="{{path('app_evenements')}}">Les évènements</a>
               </div>
             </div>
   
@@ -71,9 +71,9 @@
             <form method="post" action="/login">
               <div class="inputs-only">
 
-                <input type="email"  name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus placeholder="Votre adresse Email" >
+                <input  type="email"  name="email" id="inputEmail" class="form-control rounded-pill" autocomplete="email" required autofocus placeholder="Votre adresse Email" >
 
-                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required placeholder="Votre mot de passe" >
+                <input type="password" name="password" id="inputPassword" class="form-control rounded-pill" autocomplete="current-password" required placeholder="Votre mot de passe" >
 
                   <a class="pwd-forgotten" href=""> Mot de passe oublié?</a>
               </div>

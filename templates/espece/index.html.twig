@@ -4,23 +4,19 @@
 <link rel="stylesheet" href="{{asset('css/style-base.css')}}">
 <link rel="stylesheet" href="{{asset('css/style-component.css')}}">
 <link rel="stylesheet" href="{{asset('css/fiche-style.css')}}">
-    
+
 {% endblock %}
-{% block title %}Hello EspeceController!{% endblock %}
+{% block title %}Les Espèces{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/ce/Desktop/Dinoscopia/src/Controller/EspeceController.php'|file_link(0) }}">src/Controller/EspeceController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/ce/Desktop/Dinoscopia/templates/espece/index.html.twig'|file_link(0) }}">templates/espece/index.html.twig</a></code></li>
-    </ul>
-</div>
+<main>
+      <section id="padding-top-espacement-nav">
+        <img src="{{asset('img/map-espece.jpg')}}" alt="#" usemap="#map-espece"/>
+        <map name="map-espece">
+          <area alt="#" href="/espece/3" coords="380,364,932,682" shape="rect">
+          <area alt="#" href="/espece/3" coords="1206,222,1698,718" shape="rect">
+          <area alt="#" href="/espece/3" coords="588,787,1160,1007" shape="rect">
+        </map>
+      </section>
+    </main>
 {% endblock %}
